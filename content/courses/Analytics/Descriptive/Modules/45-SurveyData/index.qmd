@@ -39,9 +39,6 @@ webr:
 #| include: true
 #| message: false
 
-library(tidyverse)
-library(mosaic) # Our trusted friend
-library(skimr)
 library(vcd) # Michael Friendly's package, Visualizing Categorical Data
 library(vcdExtra) # Categorical Data Sets
 library(resampledata) # More datasets
@@ -55,6 +52,10 @@ library(kableExtra) # html styled tables
 library(tinytable) # Elegant Tables for our data
 library(tidyplots) # Easily Produced Publication-Ready Plots
 library(tinyplot) # Plots with Base R
+#
+library(mosaic) # Our trusted friend
+library(skimr)
+library(tidyverse)
 
 ```
 
@@ -149,6 +150,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -158,8 +168,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 

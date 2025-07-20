@@ -29,14 +29,14 @@ editor:
 #| include: true
 #| message: true
 #| warning: false
-library(tidyverse)
+
 library(mosaic)
 library(ggmosaic) # plotting mosaic plots for Categorical Data
 
 ### Dataset from Chihara and Hesterberg's book (Second Edition)
 library(resampledata)
 library(vcd)
-
+library(tidyverse)
 ```
 
 ```{r}
@@ -128,6 +128,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -137,8 +146,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 

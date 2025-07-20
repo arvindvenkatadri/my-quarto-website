@@ -26,6 +26,7 @@ filters:
 #| eval: false
 library(despair)
 despair::motivate()
+
 ```
 
 :::: {.pa4}
@@ -43,13 +44,14 @@ despair::motivate()
 #| include: true
 #| message: false
 #| warning: false
-library(tidyverse)
+
 library(mosaic)
 library(ggformula)
 library(infer)
 library(broom) # Clean test results in tibble form
 library(resampledata) # Datasets from Chihara and Hesterberg's book
 library(openintro) # More datasets
+library(tidyverse)
 
 ```
 
@@ -145,6 +147,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -154,10 +165,10 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
+
+
 
 
 ## {{< iconify fxemoji japanesesymbolforbeginner >}} Introduction

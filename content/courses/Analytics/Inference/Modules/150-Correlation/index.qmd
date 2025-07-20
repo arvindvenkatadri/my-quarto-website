@@ -24,7 +24,6 @@ editor:
 #| include: true
 
 # CRAN Packages
-library(tidyverse)
 library(mosaic)
 library(ggformula)
 library(broom)
@@ -41,6 +40,9 @@ library(ggExtra)
 # Non-CRAN Packages
 # remotes::install_github("easystats/easystats")
 library(easystats)
+
+
+library(tidyverse) # Tidy Data Processing
 
 ```
 
@@ -133,6 +135,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -142,8 +153,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 
@@ -295,13 +304,13 @@ theme_set(new = theme_custom())
 Galton_sons %>% 
   gf_point(son ~ father) %>% 
   gf_lm() %>% 
-  gf_labs(title = "Height of Sons vs fathers",
+  gf_labs(title = "Heights of Sons vs Fathers",
           subtitle = "Galton dataset")
 ##
 Galton_daughters %>% 
   gf_point(daughter ~ father) %>% 
   gf_lm() %>% 
-  gf_labs(title = "Height of Daughters vs Fathers",
+  gf_labs(title = "Heights of Daughters vs Fathers",
           subtitle = "Galton dataset")
 ```
 
@@ -316,7 +325,7 @@ Galton %>%
            group = ~ sex, colour = ~ sex) %>% 
   gf_lm() %>% 
   gf_refine(scale_color_brewer(palette = "Set1")) %>%
-  gf_labs(title = "Height of sons vs fathers",
+  gf_labs(title = "Heights of Children vs Fathers",
           subtitle = "Galton dataset")
 
 ```

@@ -156,6 +156,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -165,8 +174,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 
@@ -207,13 +214,14 @@ Box Plots are an extremely useful data visualization that gives us an idea of th
 
 ```{r}
 #| label: fig-boxplot-diagram
+#| fig-cap: Box Plot Illustration
 #| echo: false
-#| fig-cap: "Box Plot Definitions"
-#| fig-height: 4
+
+theme_set(theme_custom())
 
 set.seed(123)
 data <- rt(150, df = 10)
-MKdescr::illustrate.boxplot(data) + theme_custom()
+MKdescr::illustrate.boxplot(data) 
 
 ```
 
@@ -224,7 +232,7 @@ The internal process of this plot is as follows:
   - Make groups of the Quant variable for each level of the Qual
   - In each group, **rank** the Quant variable **values** in increasing order
   - Calculate: 
-    - The **values** for `median = Q2`, Q1, and Q3 based on **rank**!!
+    - **Quartiles**: The **values** for `median = Q2`, Q1, and Q3 based on **rank**!!
     - **Values** for `min`, `max`,  and then `IQR = Q1 - Q3`
     - Calculate `outlier` limits: 
       - $[Q1 - 1.5*IQR, Q2 + 1.5*IQR]$

@@ -33,7 +33,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../../../site_libs/revealjs/dist/theme/quarto-8021a6af36b550ebccce078232367809.css">
+  <link rel="stylesheet" href="../../../../../site_libs/revealjs/dist/theme/quarto-40088df611eaee33d7da86f20db75fb7.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6SVG9ZJYCM"></script>
 
   <script type="text/javascript">
@@ -135,8 +135,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../../../../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-  <script src="../../../../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <meta property="og:title" content="Teaching in Low Resource Environments – Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
 <meta property="og:description" content="A Presentation on the Teaching Methods in the Library Programme of Akshara Foundation, 2007-2013">
 <meta property="og:site_name" content="Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
@@ -1043,6 +1041,44 @@ Figure&nbsp;1: Library Hub Spoke Model
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

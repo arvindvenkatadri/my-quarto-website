@@ -50,14 +50,14 @@ webr:
 #| message: false
 #| warning: false
 
-library(tidyverse)
-library(mosaic)
-library(ggformula)
-library(skimr)
-##
+
 library(tidyplots) # Easily Produced Publication-Ready Plots
 library(tinyplot) # Plots with Base R
 library(tinytable) # Elegant Tables for our data
+library(mosaic)
+library(skimr)
+library(ggformula)
+library(tidyverse) # Most Important Last
 
 
 ```
@@ -157,6 +157,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -166,8 +175,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 
@@ -188,6 +195,7 @@ theme_set(new = theme_custom())
 #| message: false
 #| echo: false
 #| warning: false
+
 read_csv("../../../../../materials/Data/pronouns.csv") %>% 
   filter(No == "1") %>% 
   tt(theme = "striped")
@@ -203,6 +211,7 @@ read_csv("../../../../../materials/Data/pronouns.csv") %>%
 #| echo: false
 
 library(patchwork)
+theme_set(new = theme_custom())
 
 data <- read.table("https://raw.githubusercontent.com/zonination/perceptions/master/probly.csv", header=TRUE, sep=",")
 
@@ -218,35 +227,33 @@ p1 <- data %>%
   mutate(text = fct_reorder(text, value)) %>% # Reorder data
   ggplot( aes(x=text, y=value, fill=text, color=text)) +
     geom_boxplot() +
-    scale_fill_viridis_d(aesthetics = c("colour", "fill")) +
-    theme_ipsum() +
-    theme(
-      legend.position="none"
+    ggtitle(label = "Box Plots") + 
+    scale_fill_brewer(palette = "Set2", aesthetics = c("colour", "fill")) +
+    theme(legend.position ="none"
     ) +
     coord_flip() + # This switch X and Y axis and allows to get the horizontal version
     xlab("") +
     ylab("Assigned Probability (%)")
-
 
 # Violin Plot
 p2 <- data %>%
   mutate(text = fct_reorder(text, value)) %>% # Reorder data
   ggplot( aes(x=text, y=value, fill=text, color=text)) +
+    ggtitle(label = "Violin Plots") + 
     geom_violin(width=2.1, linewidth=0.2) +
-    scale_fill_viridis_d(aesthetics = c("colour", "fill")) +
-    theme_ipsum() +
-    theme(
-      legend.position="none"
+    scale_fill_brewer(palette = "Set2", aesthetics = c("colour", "fill")) +
+    theme(legend.position="none"
     ) +
     coord_flip() + # This switch X and Y axis and allows to get the horizontal version
     xlab("") +
     ylab("Assigned Probability (%)")
 
-patchwork::wrap_plots(p1,p2, ncol = 2) + patchwork::plot_layout(axes = "collect")
+
+patchwork::wrap_plots(p1,p2, ncol = 2) + plot_layout(axes = "keep")
 
 ```
 
-Which is the plots above is more evocative of the underlying data? The one which looks like a combo box-plot + density is probably giving us a greater sense of the spread of the data than the good old box plot.
+Which is the plots above is more evocative of the underlying data? The violin plots, which looks like a combo box-plot + density, is probably giving us a greater sense of the spread of the data than the good old box plot.
 
 
 ## {{< iconify mdi food-processor-outline >}} How do these Chart(s) Work?
@@ -266,9 +273,10 @@ Let us see what this looks like!
 ```{r}
 #| label: fig-normal-violins
 #| fig-cap: "Violin Plots for Normal Variables" 
-#| #| echo: false
+#| echo: false
 #| warning: false
 
+theme_set(new = theme_custom())
 library(ggnormalviolin)
 # Make data
 d <- data_frame(

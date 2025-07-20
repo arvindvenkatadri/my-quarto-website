@@ -44,9 +44,10 @@ is to stand out of their light."]{.f5 .f4-m .f3-l .lh-copy .measure
 
 ```{r}
 #| label: setup
+#| include: true
 #| message: false
 #| warning: false
-library(tidyverse) # Data Processing in R
+
 library(mosaic) # Our workhorse for stats, sampling
 library(skimr) # Good to Examine data
 library(ggformula) # Formula interface for graphs
@@ -54,6 +55,8 @@ library(ggformula) # Formula interface for graphs
 # load the NHANES data library
 library(NHANES)
 library(infer)
+
+library(tidyverse) # Data Processing in R
 
 ```
 
@@ -148,6 +151,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -157,10 +169,9 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
-
 ```
+
+
 
 
 ## {{< iconify clarity group-solid >}} What is a Population?
@@ -335,10 +346,6 @@ with **population parameters** on the basis of this ONE sample of 50:
 #| layout: [[20,20,60]]
 #| warning: false
 
-# Set graph theme
-theme_set(new = theme_custom())
-#
-
 sample_50 <- mosaic::sample(NHANES_adult, size = 50) %>% 
   select(Height)
 sample_50
@@ -398,13 +405,9 @@ dim(sample_50_500)
 ```{r}
 #| layout-ncol: 2
 
-# Set graph theme
-theme_set(new = theme_custom())
-#
-
 sample_50_500 %>%
-  gf_point(.index ~ sample_mean, color = "purple",
-           title = "Sample Means are close to the Population Mean",
+  gf_point(.index ~ sample_mean, color = "purple") %>%
+  gf_labs(title = "Sample Means are close to the Population Mean",
            subtitle = "Sample Means are Random!",
            caption = "Grey lines represent our 500 samples") %>%
   
@@ -419,6 +422,10 @@ sample_50_500 %>%
   
   gf_vline(xintercept = ~ pop_mean, 
            color = "black") %>%
+  gf_refine(annotate(geom = "text", 
+                     x = 190, y = 250, 
+                     size = 5,
+                     label = "Grey Lines represent our 500 samples")) %>%
   
   gf_label(-25 ~ pop_mean, label = "Population Mean", 
            color = "black") 
@@ -428,7 +435,9 @@ sample_50_500 %>%
 sample_50_500 %>%
   gf_point(.index ~ sample_sd, color = "purple",
            title = "Sample SDs are close to the Population Sd",
-           subtitle = "Sample SDs are Random!",) %>%
+           subtitle = "Sample SDs are Random!",
+           ylab = "Sample Index (1-500)",
+    xlab = "Sample SDs") %>%
   
   gf_vline(xintercept = ~ pop_sd, 
            color = "black") %>%
@@ -464,10 +473,6 @@ the **distribution** of these 500 sample-means themselves, called [**a distribut
 #| fig-subcap: 
 #|  - Sample Means
 #|  - Sample Means and Population
-
-# Set graph theme
-theme_set(new = theme_custom())
-#
 
 sample_50_500 %>% 
   gf_dhistogram(~ sample_mean, bins = 30, xlab = "Height") %>% 
@@ -547,10 +552,6 @@ head(samples_08_1000)
 #| echo: false
 # Now let's create separate Q-Q plots for the different sample sizes.
 
-# Set graph theme
-theme_set(new = theme_custom())
-#
-
 p1 <- gf_qq( ~ mean,data = samples_08_1000,
              title = "N = 8", 
              color = "dodgerblue") %>%
@@ -581,16 +582,14 @@ Let us plot their individual histograms to compare them:
 
 ```{r}
 #| warning: false
+#| echo: false
 #| layout-ncol: 2
 #| layout-nrow: 2
 
-# Set graph theme
-theme_set(new = theme_custom())
-#
 # Let us overlay their individual histograms to compare them:
 p5 <- gf_dhistogram(~ mean,
               data = samples_08_1000,
-              color = "grey",
+              color = "black",
               fill = "dodgerblue",title = "N = 8") %>%
   gf_fitdistr(linewidth = 1) %>%
   gf_vline(xintercept = pop_mean, inherit = FALSE,
@@ -602,7 +601,7 @@ p5 <- gf_dhistogram(~ mean,
 ##
 p6 <- gf_dhistogram(~ mean,
               data = samples_16_1000,
-              color = "grey",
+              color = "black",
               fill = "sienna",title = "N = 16") %>%
   gf_fitdistr(linewidth = 1) %>%
   gf_vline(xintercept = pop_mean,
@@ -615,7 +614,7 @@ p6 <- gf_dhistogram(~ mean,
 p7 <- gf_dhistogram(~ mean,
                     data = samples_32_1000 ,
                     na.rm = TRUE,
-                    color = "grey",
+                    color = "black",
                     fill = "palegreen",title = "N = 32") %>%
   gf_fitdistr(linewidth = 1) %>%
   gf_vline(xintercept = pop_mean,
@@ -627,7 +626,7 @@ p7 <- gf_dhistogram(~ mean,
 p8 <- gf_dhistogram(~ mean, 
                     data = samples_64_1000,
                     na.rm = TRUE,
-                    color = "grey",
+                    color = "black",
                     fill = "violetred",title = "N = 64") %>% 
   gf_fitdistr(linewidth = 1) %>% 
   gf_vline(xintercept = pop_mean,
@@ -648,34 +647,30 @@ And if we overlay these histograms on top of one another:
 
 ```{r, echo=FALSE}
 
-# Set graph theme
-theme_set(new = theme_custom())
-#
-
 gf_dhistogram(~ mean,
               data = samples_08_1000,
-              color = "grey",
+              color = "black",
               fill = "dodgerblue",alpha = .5) %>% 
   # gf_label(0.15 ~ 172, inherit = FALSE,
   #          label = "N = 8", color = "dodgerblue") %>% 
 
 gf_dhistogram(~ mean,
               data = samples_16_1000,
-              color = "grey",
+              color = "black",
               fill = "sienna",alpha = 0.5) %>% 
     # gf_label(0.2 ~ 172, 
     #        label = "N = 16", color = "sienna") %>% 
 
 gf_dhistogram(~ mean,
               data = samples_32_1000,
-              color = "grey",
+              color = "black",
               fill = "palegreen",alpha = 0.5) %>% 
     # gf_label(0.3 ~ 172, 
     #        label = "N = 32", color = "palegreen") %>% 
 
 gf_dhistogram(~ mean,
               data = samples_64_1000,
-              color = "grey",
+              color = "black",
               fill = "violetred",alpha = 0.5) %>% 
     # gf_label(0.4 ~ 172, 
     #        label = "N = 64", color = "violetred") %>% 
@@ -683,27 +678,27 @@ gf_dhistogram(~ mean,
 gf_fitdistr(
   ~ mean,
   data = samples_08_1000,
-  color = "dodgerblue",size = 2
+  color = "dodgerblue", linewidth = 2
 ) %>%
   
   gf_fitdistr(
     ~ mean,
     data = samples_16_1000 ,
-    color = "sienna",size = 2
+    color = "sienna", linewidth = 2
   ) %>%
   
   gf_fitdistr(
     ~ mean,
     data = samples_32_1000 ,
     na.rm = TRUE,
-    color = "palegreen",size = 2
+    color = "palegreen", linewidth = 2
   ) %>%
   
   gf_fitdistr(
     ~ mean,
     data = samples_64_1000 ,
     na.rm = TRUE,
-    color = "violetred", size = 2
+    color = "violetred", linewidth = 2
   ) %>%
   
   gf_vline(xintercept = pop_mean,
@@ -764,9 +759,6 @@ Taking the square root gives us an average error, which we would call, of course
 #| label: showing-variance-calculation
 #| echo: false
 
-# Set graph theme
-theme_set(new = theme_custom())
-##
 sample_50 %>% 
   rowid_to_column() %>% 
   gf_hline(yintercept = mean(~sample_50$Height)) %>% 
@@ -868,7 +860,7 @@ this computed standard deviation of the sample-mean-distributions as the
 **Standard Error**. This statistic derived from the sample-mean-distribution will help us infer our population parameters with a precise estimate of the *uncertainty* involved.
 
 $$
-Standard\ Error\ \pmb {se} = \frac{pop.sd}{\sqrt[]{n}}\\
+\Large{Standard\ Error\ \pmb {se} = \frac{pop.sd}{\sqrt[]{n}}}\\
 $$
 [However, we don't normally know the `pop_sd`!! So now what?? So is this chicken and egg??]{style="background-color: yellow;"}
 
@@ -895,13 +887,13 @@ sd(~ Height, data = sample_64)
 ::: callout-warning
 As we saw at the start of this module, the sample-means are distributed around the `pop_mean`, AND it appears that the sample-sds are also distributed around the `pop_sd`! 
 
-However, the sample-sd distribution is **not Gaussian**, and the sample_sd is also **not an unbiased estimate** for the `pop_sd`. However, when the sample size $n$ is large ($n >= 30$), the sample-sd distribution approximates the Gaussian, and the bias is small. 
+However, the `sample_sd` distribution is **not Gaussian** (it can be never be negative!), and the sample_sd is also **not an unbiased estimate** for the `pop_sd`. However, when the sample size $n$ is large ($n >= 30$), the sample-sd distribution approximates the Gaussian, and the bias is small. 
 :::
 
 And so, in the same way, [we approximate the `pop_sd` with the sd of a **single sample** of the same length]{.bg-washed-red .black}. Hence the *Standard Error* can be computed from **a single sample** as:
 
 $$
-Standard\ Error\ \pmb {se} = \frac{sample.sd}{\sqrt[]{n}}
+\Large{Standard\ Error\ \pmb {se} = \frac{sample ~ sd}{\sqrt[]{n}}}
 $$
 
 With these, the Standard Errors(SE) evaluate to:
@@ -989,10 +981,6 @@ So finally, [we can *pretend* that our sample is also distributed normally ( i.e
 #| message: true
 #| results: hold
 
-
-# Set graph theme
-theme_set(new = theme_custom())
-#
 sample_mean = mean(~ Height, data = sample_16)
 se = sd(~ Height, data = sample_16)/sqrt(16)
 #

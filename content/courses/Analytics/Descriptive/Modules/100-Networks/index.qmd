@@ -29,7 +29,6 @@ citation: true
 #| warning: false
 #| message: false
 
-library(tidyverse)
 library(igraph) # Network Analysis Library (Handle data and Viz)
 library(tidygraph) # For Network "Manipulation"
 library(ggraph) # For Network Visualization
@@ -43,6 +42,8 @@ library(tinytable) # Elegant Tables for our data
 # For repeatable layouts, some can be random!!
 set.seed(12345)
 
+library(tidyverse)
+
 ```
 
 ```{r}
@@ -55,7 +56,6 @@ library(epoxy)
 library(grateful)
 
 ```
-
 
 #### Plot Fonts and Theme
 
@@ -132,6 +132,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -141,10 +150,10 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
+
+
 
 
 ## {{< iconify openmoji japanese-symbol-for-beginner >}} Introduction
@@ -729,20 +738,24 @@ aspects of the group? How?
 Faceting allows to create sub-plots according to the values of a
 qualitative attribute on nodes or edges.
 
+
 ```{r}
+#| layout-ncol: 2
 #| label:  faceting
 #| column: body-outset-right
-#| layout-ncol: 2
+#| fig-show: hold
 
-set_graph_style(family = "Roboto Condensed",size = 16)
-
+set_graph_style(family = "Roboto Condensed", size = 11)
+##
 # facet edges by type
 ggraph(ga,layout = "linear", circular = TRUE) + 
   geom_edge_link0(aes(color = type)) + 
   geom_node_point() +
   facet_edges(~ type) +
   th_foreground(border = TRUE) +
-  theme(aspect.ratio = 1)
+  theme(aspect.ratio = 1) +
+  labs(title = "Grey's Anatomy Network", 
+       subtitle = "Types of Relationships")
 
 # facet nodes by sex
 ggraph(ga,layout = "linear", circular = TRUE) + 
@@ -750,7 +763,9 @@ ggraph(ga,layout = "linear", circular = TRUE) +
   geom_node_point() +
   facet_nodes(~race) +
   th_foreground(border = TRUE) +
-  theme(aspect.ratio = 1)
+  theme(aspect.ratio = 1)  +
+  labs(title = "Grey's Anatomy Network", 
+       subtitle = "Race") 
 
 
 # facet both nodes and edges
@@ -759,7 +774,11 @@ ggraph(ga,layout = "linear", circular = TRUE) +
   geom_node_point() +
   facet_graph(type ~ race) + 
   th_foreground(border = TRUE) +
-  theme(aspect.ratio = 1, legend.position = "right")
+  theme(aspect.ratio = 1, legend.position = "right") +
+  labs(title = "Grey's Anatomy Network", 
+       subtitle = "Race and Relationship") 
+
+unset_graph_style()
 
 ```
 

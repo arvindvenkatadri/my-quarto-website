@@ -49,22 +49,14 @@ webr:
 #| message: false
 #| warning: false
 
-library(tidyverse)
-library(mosaic)
-library(ggformula)
-library(skimr)
-##
 library(crosstable) # Fast stats for multiple variables in table form
-##
 library(tidyplots) # Easily Produced Publication-Ready Plots
 library(tinyplot) # Plots with Base R
 library(tinytable) # Elegant Tables for our data
-
-## ggplot theme
-# library(hrbrthemes)
-# hrbrthemes::import_roboto_condensed() # Import Roboto Condensed font for use in charts
-# hrbrthemes::update_geom_font_defaults() #Update matching font defaults for text geoms
-# ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
+library(mosaic)
+library(ggformula)
+library(skimr)
+library(tidyverse) # Most important the last
 ```
 
 
@@ -163,6 +155,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -172,11 +173,8 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
-
 
 
 
@@ -375,8 +373,6 @@ Let's plot some histograms to answer each of the Hypothesis questions above.
 #| label: histogram-price-ggformula-1
 #| eval: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
 gf_histogram(~ price, data = diamonds) %>%
   gf_labs(title = "Plot 1A: Diamond Prices",
           caption = "ggformula")
@@ -397,8 +393,6 @@ gf_histogram(~ price, data = diamonds) %>%
 ```{r}
 #| label: histogram-price-ggformula-2
 #| eval: false
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 ## More bins
 gf_histogram(~ price, data = diamonds, 
@@ -423,9 +417,6 @@ gf_histogram(~ price, data = diamonds,
 #| label: histogram-price-ggplot
 #| message: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
-
 ggplot(data = diamonds) + 
   geom_histogram(aes(x = price)) +
   labs(title = "Plot 1A: Diamond Prices",
@@ -441,8 +432,6 @@ ggplot(data = diamonds) +
 ### {{< iconify noto-v1 spider-web >}} web-r-1
 
 ```{webr-r}
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 gf_histogram(~ price, data = diamonds) %>%
   gf_labs(title = "Plot 1A: Diamond Prices",
@@ -477,8 +466,6 @@ gf_histogram(~ price, data = diamonds,
 #| label: histogram-carat-ggformula-1
 #| eval: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
 diamonds %>% 
   gf_histogram(~ carat) %>%
   gf_labs(title = "Plot 2A: Carats of Diamonds",
@@ -499,8 +486,6 @@ diamonds %>%
 ```{r}
 #| label: histogram-carat-ggformula-2
 #| eval: false
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 ## More bins
 diamonds %>% 
@@ -524,8 +509,6 @@ diamonds %>%
 #| layout-ncol: 2
 #| message: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
 diamonds %>% 
   ggplot() + 
   geom_histogram(aes(x = carat)) + 
@@ -543,8 +526,6 @@ diamonds %>%
 ### {{< iconify noto-v1 spider-web >}} web-r-2
 
 ```{webr-r}
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 diamonds %>% 
   gf_histogram(~ carat) %>%
@@ -581,9 +562,6 @@ diamonds %>%
 #| label: ggformula-price-others-1
 #| eval: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
-##
 gf_histogram(~ price, fill = ~ cut, data = diamonds) %>%
   gf_labs(title = "Plot 3A: Diamond Prices",caption = "ggformula") 
 ```
@@ -602,8 +580,6 @@ gf_histogram(~ price, fill = ~ cut, data = diamonds) %>%
 ```{r}
 #| label: ggformula-price-others-2
 #| eval: false
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 diamonds %>% 
   gf_histogram(~ price, fill = ~ cut, color = "black", alpha = 0.3) %>%
@@ -624,9 +600,6 @@ diamonds %>%
 ```{r}
 #| label: ggformula-price-others-3
 #| eval: false
-
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 diamonds %>% 
   gf_histogram(~ price, fill = ~ cut, color = "black", alpha = 0.3) %>%
@@ -652,8 +625,6 @@ diamonds %>%
 #| label: ggformula-price-others-4
 #| eval: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
 diamonds %>% 
   gf_histogram(~ price, fill = ~ cut, color = "black", alpha = 0.3) %>% 
   gf_facet_wrap(~ cut, scales = "free_y", nrow = 2) %>%
@@ -676,8 +647,6 @@ diamonds %>%
 ### ggplot-3
 ```{r}
 #| layout-ncol: 2
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 diamonds %>% ggplot() + 
   geom_histogram(aes(x = price, fill = cut), alpha = 0.3) + 
@@ -710,8 +679,6 @@ diamonds  %>% ggplot() +
 
 ### {{< iconify noto-v1 spider-web >}} web-r-3
 ```{webr-r}
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 gf_histogram(~ price, fill = ~ cut, data = diamonds) %>%
   gf_labs(title = "Plot 3A: Diamond Prices",caption = "ggformula") 
@@ -799,6 +766,7 @@ GitHub](https://github.com/BjnNowak/UltraTrailRunning).
 ```{r}
 #| message: false
 #| warning: false
+
 race_df <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-26/race.csv")
 rank_df <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-26/ultra_rankings.csv")
 
@@ -988,6 +956,7 @@ countries send the maximum number of participants??
 ### {{< iconify la r-project >}} R
 
 ```{r}
+#| code-fold: true
 race_df %>% count(country) %>% arrange(desc(n)) %>% top_n(3, n)
 rank_df %>% count(nationality) %>% arrange(desc(n)) %>% top_n(6, n)
 
@@ -1020,6 +989,7 @@ ranks)?
 ### {{< iconify la r-project >}} R
 
 ```{r}
+#| code-fold: true
 rank_df %>% 
   filter(rank %in% c(1,2,3)) %>%
   count(nationality) %>% arrange(desc(n)) %>% top_n(6, n)
@@ -1059,6 +1029,7 @@ observations in **both** datasets.
 ### {{< iconify la r-project >}} R
 
 ```{r}
+#| code-fold: true
 #| layout-nrow: 2
 
 longest_races <- race_df %>%
@@ -1119,10 +1090,6 @@ races and all ranks?
 #| label: ggformula-race-times-1
 #| eval: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
-##
-
 rank_df %>%
   gf_histogram(~ time_in_seconds, bins = 75) %>%
   gf_labs(title = "Histogram of Race Times")
@@ -1141,8 +1108,6 @@ rank_df %>%
 ### {{< iconify noto-v1 spider-web >}} web-r
 
 ```{webr-r}
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 rank_df %>%
   gf_histogram(~ time_in_seconds, bins = 75)  %>%
@@ -1174,8 +1139,6 @@ What is the distribution of race distances?
 #| label: ggformula-race-times-2
 #| eval: false
 
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
 race_df %>%
   gf_histogram(~ distance, bins =  50) %>%
   gf_labs(title = "Histogram of Race Distances")
@@ -1201,8 +1164,6 @@ race_df %>%
 ### {{< iconify noto-v1 spider-web >}} web-r
 
 ```{webr-r}
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
 
 race_df %>%
   gf_histogram(~ distance, bins =  50) %>%
@@ -1256,9 +1217,6 @@ afternoon(1400: 1800), evening(1800:2200), and night(2200:0200)
 ```{r}
 #| label: Slicing_time_to_Qual
 # Demo purposes only!
-
-#ggplot2::theme_set(new = theme_classic(base_family = "Roboto Condensed")) # Set consistent graph theme
-
 
 race_start_factor <- race_df %>%
   filter(distance == 0) %>%  # Races that actually took place
@@ -1458,9 +1416,10 @@ Since very large observations are indeed possible, if not highly probable, [one 
 Several distribution shapes exist, here is an illustration of the 6 most common ones:
 
 ```{r}
+#| label: fig-type-of-distributions
 #| echo: false
 #| warning: false
-#| fig-cap: Type_of_Distributions
+#| fig-cap: "Types of Distributions"
 # Build dataset with different distributions
 library(hrbrthemes)
 

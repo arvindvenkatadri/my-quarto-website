@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-c23b7709e79dce8e83170d48840a32ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../../site_libs/bootstrap/bootstrap-f2ac2e442c7fd822dcfeb714f5086cee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../../site_libs/bootstrap/bootstrap-d5664ca1fdd2dd02efaccf936bd1c2a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../../../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script src="../../../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -113,18 +113,18 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 </script><style>html{ scroll-behavior: smooth; }</style>
-<script src="../../../../../../site_libs/font-awesome-6.5.2/js/script.js"></script><link href="../../../../../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../../../../../../site_libs/font-awesome-6.7.2/js/script.js"></script><link href="../../../../../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../../../../../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <meta property="og:title" content=" Ikea Furniture – Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
-<meta property="og:description" content="This is the teaching website of Arvind V., Adjunct Professor, DSU, India.">
+<meta property="og:description" content="This is the teaching website of Arvind V., External Faculty, Srishti Manipal Institute of Art, Design, and Technology, Bangalore, India.">
 <meta property="og:image" content="https://av-quarto.netlify.app/content/courses/Analytics/CaseStudies/Modules/10-IkeaFurniture/index_files/figure-html/unnamed-chunk-3-1.png">
 <meta property="og:site_name" content="Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
-<meta property="og:image:height" content="2595">
+<meta property="og:image:height" content="3000">
 <meta property="og:image:width" content="4200">
 <meta name="twitter:title" content=" Ikea Furniture – Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
-<meta name="twitter:description" content="This is the teaching website of Arvind V., Adjunct Professor, DSU, India.">
+<meta name="twitter:description" content="This is the teaching website of Arvind V., External Faculty, Srishti Manipal Institute of Art, Design, and Technology, Bangalore, India.">
 <meta name="twitter:image" content="https://av-quarto.netlify.app/content/courses/Analytics/CaseStudies/Modules/10-IkeaFurniture/index_files/figure-html/unnamed-chunk-3-1.png">
-<meta name="twitter:image-height" content="2595">
+<meta name="twitter:image-height" content="3000">
 <meta name="twitter:image-width" content="4200">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -1230,7 +1230,119 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/ggformula">ggformula</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/ggridges/">ggridges</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="plot-theme-and-fonts" class="level4"><h4 class="anchored" data-anchor-id="plot-theme-and-fonts">Plot Theme and Fonts</h4>
+<div class="cell">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">7</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.asp =</span> <span class="fl">0.618</span>, <span class="co"># Golden Ratio</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># out.width = "80%",</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">"center"</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="do">## https://stackoverflow.com/questions/36476751/associate-a-color-palette-with-ggplot2-theme</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>my_colours <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#fd7f6f"</span>, <span class="st">"#7eb0d5"</span>, <span class="st">"#b2e061"</span>, <span class="st">"#bd7ebe"</span>, <span class="st">"#ffb55a"</span>, <span class="st">"#ffee65"</span>, <span class="st">"#beb9db"</span>, <span class="st">"#fdcce5"</span>, <span class="st">"#8bd3c7"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>my_pastels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#66C5CC"</span>, <span class="st">"#F6CF71"</span>, <span class="st">"#F89C74"</span>, <span class="st">"#DCB0F2"</span>, <span class="st">"#87C55F"</span>, <span class="st">"#9EB9F3"</span>, <span class="st">"#FE88B1"</span>, <span class="st">"#C9DB74"</span>, <span class="st">"#8BE0A4"</span>, <span class="st">"#B497E7"</span>, <span class="st">"#D3B484"</span>, <span class="st">"#B3B3B3"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>my_greys <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#000000"</span>, <span class="st">"#333333"</span>, <span class="st">"#666666"</span>, <span class="st">"#999999"</span>, <span class="st">"#cccccc"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>my_vivids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#E58606"</span>, <span class="st">"#5D69B1"</span>, <span class="st">"#52BCA3"</span>, <span class="st">"#99C945"</span>, <span class="st">"#CC61B0"</span>, <span class="st">"#24796C"</span>, <span class="st">"#DAA51B"</span>, <span class="st">"#2F8AC4"</span>, <span class="st">"#764E9F"</span>, <span class="st">"#ED645A"</span>, <span class="st">"#CC3A8E"</span>, <span class="st">"#A5AA99"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>my_bolds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#7F3C8D"</span>, <span class="st">"#11A579"</span>, <span class="st">"#3969AC"</span>, <span class="st">"#F2B701"</span>, <span class="st">"#E73F74"</span>, <span class="st">"#80BA5A"</span>, <span class="st">"#E68310"</span>, <span class="st">"#008695"</span>, <span class="st">"#CF1C90"</span>, <span class="st">"#f97b72"</span>, <span class="st">"#4b4b8f"</span>, <span class="st">"#A5AA99"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(systemfonts)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Clean the slate</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>systemfonts<span class="sc">::</span><span class="fu">clear_local_fonts</span>()</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>systemfonts<span class="sc">::</span><span class="fu">clear_registry</span>()</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_opts</span>(<span class="at">dpi =</span> <span class="dv">96</span>) <span class="co"># set DPI for showtext</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>sysfonts<span class="sc">::</span><span class="fu">font_add</span>(</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Alegreya"</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">regular =</span> <span class="st">"../../../../../../fonts/Alegreya-Regular.ttf"</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">bold =</span> <span class="st">"../../../../../../fonts/Alegreya-Bold.ttf"</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">italic =</span> <span class="st">"../../../../../../fonts/Alegreya-Italic.ttf"</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">bolditalic =</span> <span class="st">"../../../../../../fonts/Alegreya-BoldItalic.ttf"</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>sysfonts<span class="sc">::</span><span class="fu">font_add</span>(</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">regular =</span> <span class="st">"../../../../../../fonts/RobotoCondensed-Regular.ttf"</span>,</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">bold =</span> <span class="st">"../../../../../../fonts/RobotoCondensed-Bold.ttf"</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">italic =</span> <span class="st">"../../../../../../fonts/RobotoCondensed-Italic.ttf"</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">bolditalic =</span> <span class="st">"../../../../../../fonts/RobotoCondensed-BoldItalic.ttf"</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_auto</span>(<span class="at">enable =</span> <span class="cn">TRUE</span>) <span class="co"># enable showtext</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>theme_custom <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  font <span class="ot">&lt;-</span> <span class="st">"Alegreya"</span> <span class="co"># assign font family up front</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">14</span>, <span class="at">base_family =</span> font) <span class="sc">%+replace%</span> <span class="co"># replace elements we want to change</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> font), <span class="co"># set base font family</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>      <span class="co"># text elements</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>( <span class="co"># title</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>        <span class="at">family =</span> font, <span class="co"># set font family</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">24</span>, <span class="co"># set font size</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        <span class="at">face =</span> <span class="st">"bold"</span>, <span class="co"># bold typeface</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>        <span class="at">hjust =</span> <span class="dv">0</span>, <span class="co"># left align</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">5</span>, <span class="at">l =</span> <span class="dv">0</span>)</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>      ), <span class="co"># margin</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>( <span class="co"># subtitle</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="at">family =</span> font, <span class="co"># font family</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">14</span>, <span class="co"># font size</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">hjust =</span> <span class="dv">0</span>, <span class="co"># left align</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">10</span>, <span class="at">l =</span> <span class="dv">0</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>      ), <span class="co"># margin</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.caption =</span> <span class="fu">element_text</span>( <span class="co"># caption</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">family =</span> font, <span class="co"># font family</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">9</span>, <span class="co"># font size</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">hjust =</span> <span class="dv">1</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>      ), <span class="co"># right align</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>, <span class="co"># right align</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"navajowhite"</span>),</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title =</span> <span class="fu">element_text</span>( <span class="co"># axis titles</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>, <span class="co"># font family</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">12</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      ), <span class="co"># font size</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="co"># axis text</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>, <span class="co"># font family</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">9</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>      ), <span class="co"># font size</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.x =</span> <span class="fu">element_text</span>( <span class="co"># margin for axis text</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">5</span>, <span class="at">b =</span> <span class="dv">10</span>)</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="co"># since the legend often requires manual tweaking</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="co"># based on plot content, don't define it here</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="do">## Use available fonts in ggplot text geoms too!</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="fu">update_geom_defaults</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">new =</span> <span class="fu">list</span>(</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>,</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>  <span class="at">face =</span> <span class="st">"plain"</span>,</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="fl">3.5</span>,</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"#2b2b2b"</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="do">## Set the theme</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="at">new =</span> <span class="fu">theme_custom</span>())</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section></section><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This is a dataset pertaining to furniture prices at IKEA, modified for ease of analysis and plotting.</p>
 </section><section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
 <div class="cell">

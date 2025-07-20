@@ -34,13 +34,13 @@ library(glue)
 
 ```
 
-
+#### Plot Theme and Fonts
 ```{r}
-#| echo: false
-# library(ggthemr)
-# library(ggsci)
-# library(paletteer)
-# Chunk options
+#| echo: fenced
+#| code-fold: true
+#| message: false
+#| warning: false
+
 knitr::opts_chunk$set(
  fig.width = 7,
  fig.asp = 0.618, # Golden Ratio
@@ -57,45 +57,86 @@ my_vivids <- c("#E58606","#5D69B1","#52BCA3","#99C945","#CC61B0","#24796C","#DAA
 
 my_bolds <- c("#7F3C8D","#11A579","#3969AC","#F2B701","#E73F74","#80BA5A","#E68310","#008695","#CF1C90","#f97b72","#4b4b8f","#A5AA99")
 
-font <- "Roboto Condensed"
-mytheme <- theme_classic(base_size = 14) + ### %+replace%    #replace elements we want to change
-  
-  theme(
-    text = element_text(family = font),
-    panel.grid.minor = element_blank(),
-    #text elements
-    plot.title = element_text(family = font,
-      face = 'bold',
-      hjust = 0, #left align
-      #vjust = 2 #raise slightly
-      margin = margin(0, 0, 10, 0)
-    ),
+library(systemfonts)
+library(showtext)
+## Clean the slate
+systemfonts::clear_local_fonts()
+systemfonts::clear_registry()
+##
+showtext_opts(dpi = 96) #set DPI for showtext
+sysfonts::font_add(family = "Alegreya",
+  regular = "../../../../../../fonts/Alegreya-Regular.ttf",
+  bold = "../../../../../../fonts/Alegreya-Bold.ttf",
+  italic = "../../../../../../fonts/Alegreya-Italic.ttf",
+  bolditalic = "../../../../../../fonts/Alegreya-BoldItalic.ttf")
+
+sysfonts::font_add(family = "Roboto Condensed", 
+  regular = "../../../../../../fonts/RobotoCondensed-Regular.ttf",
+  bold = "../../../../../../fonts/RobotoCondensed-Bold.ttf",
+  italic = "../../../../../../fonts/RobotoCondensed-Italic.ttf",
+  bolditalic = "../../../../../../fonts/RobotoCondensed-BoldItalic.ttf")
+showtext_auto(enable = TRUE) #enable showtext
+##
+theme_custom <- function(){ 
+    font <- "Alegreya"   #assign font family up front
     
-    plot.subtitle = element_text(
-      family = font,
-      hjust = 0,
-      margin = margin(2, 0, 5, 0)
-    ),
+    theme_classic(base_size = 14, base_family = font) %+replace%    #replace elements we want to change
     
-    plot.caption = element_text(
-      family = font,
-      size = 8,
-      hjust = 1
-    ),
-    #right align
-    
-    axis.title = element_text(#axis titles
-      family = font, #font family
-      size = 10), #font size
-    axis.text = element_text(#axis text
-        family = font, #axis family
-        size = 8) #font size
+    theme(
+      text = element_text(family = font),  #set base font family
+      
+      #text elements
+      plot.title = element_text(                 #title
+                   family = font,          #set font family
+                   size = 24,                    #set font size
+                   face = 'bold',                #bold typeface
+                   hjust = 0,                    #left align
+                   margin = margin(t = 5, r = 0, b = 5, l = 0)), #margin
+      plot.title.position = "plot", 
+      
+      plot.subtitle = element_text(              #subtitle
+                   family = font,          #font family
+                   size = 14,                   #font size
+                   hjust = 0,                   #left align
+                   margin = margin(t = 5, r = 0, b = 10, l = 0)), #margin
+      
+      plot.caption = element_text(               #caption
+                   family = font,          #font family
+                   size = 9,                     #font size
+                   hjust = 1),                   #right align
+      
+      plot.caption.position = "plot",            #right align
+      
+      plot.background = element_rect(fill = "navajowhite"), 
+
+      axis.title = element_text(                 #axis titles
+                   family = "Roboto Condensed",  #font family
+                   size = 12),                   #font size
+      
+      axis.text = element_text(                  #axis text
+                   family = "Roboto Condensed",  #font family
+                   size = 9),                    #font size
+      
+      axis.text.x = element_text(                #margin for axis text
+                    margin = margin(5, b = 10))
+      
+      #since the legend often requires manual tweaking 
+      #based on plot content, don't define it here
     )
-theme_av <- list(
-  mytheme,
-  scale_colour_manual(values = my_bolds, aesthetics = c("colour", "fill"))
+}
+
+## Use available fonts in ggplot text geoms too!
+update_geom_defaults(geom = "text",new = list(
+  family = "Roboto Condensed",
+  face = "plain",
+  size = 3.5,
+  color = "#2b2b2b"
 )
-  
+)
+
+## Set the theme
+theme_set(new = theme_custom())
+
 ```
 
 
@@ -188,7 +229,8 @@ ikea_modified %>%
     title = "How much do items in each IKEA category cost?",
     subtitle = "Are they available in other colors?",
     caption = "TidyTuesday Dataset for 03/11/2020"
-  ) + theme_av
+  ) + theme_custom() +
+  scale_fill_manual(values = my_colours, aesthetics = c("colour", "fill"), )
 
 
 ```

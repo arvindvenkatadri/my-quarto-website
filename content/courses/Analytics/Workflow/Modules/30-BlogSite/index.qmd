@@ -183,6 +183,16 @@ In your Console:
 Yeah, peasants, you're welcome as always.
 
 
+## Branding your Website
+
+Quarto now has a separate feature to enable a consistent look and feel for your website. All documents, HTML, revealjs presentations, and PDFs can be styled using a `_brand_yml` file. The `_brand_yml` file allows setting of fonts for the logo, headings, code, colour schemes, and other visual elements of your website. The details are available from the [Quarto Website](https://posit-dev.github.io/brand-yml/). Here is a quick sample of the file:
+
+![Sample _brand.yml file](../../../../../materials/images/carbon.png){#fig-brand-yml-sample fig-align="center" width="100%"}
+
+
+Also, Albert Rapp has a nice [blog post](https://3mw.albert-rapp.de/p/brand-yml-one-theme-to-style-them-all) on how to use the `_brand.yml` file to style your website.
+
+
 ## Workflow Diagram
 
 ``` d2

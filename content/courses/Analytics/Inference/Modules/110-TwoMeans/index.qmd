@@ -36,7 +36,6 @@ which any human being can fight, and never stop fighting.]{.f5 .f4-m
 #| message: false
 #| warning: false
 
-library(tidyverse)
 library(mosaic) # Our go-to package
 library(ggformula)
 library(infer) # An alternative package for inference using tidy data
@@ -47,6 +46,8 @@ library(openintro) # datasets
 library(gt) # for tables
 ##
 library(visStatistics) # All-in-one Stats test package
+
+library(tidyverse)
 
 ```
 
@@ -140,6 +141,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -149,8 +159,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 

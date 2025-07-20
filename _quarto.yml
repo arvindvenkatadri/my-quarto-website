@@ -18,7 +18,7 @@ execute:
   freeze: auto
   cache: true
   echo: true
-  warning: true
+  warning: false
   message: false
   error: true # errors will not stop rendering!
 
@@ -32,7 +32,7 @@ website:
   title: "Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors"
   site-url: "https://av-quarto.netlify.app"
   repo-url: https://github.com/arvindvenkatadri/my-quarto-website
-  description: This is the teaching website of Arvind V., Adjunct Professor, DSU, India.
+  description: This is the teaching website of Arvind V., External Faculty, Srishti Manipal Institute of Art, Design, and Technology, Bangalore, India.
   favicon: "content/materials/icon-park-twotone--concept-sharing.svg"
   google-analytics: "G-6SVG9ZJYCM" 
   reader-mode: true

@@ -15,11 +15,11 @@ editor:
 
 ```{r}
 #| label: setup
-#| message: true
+#| message: false
 #| warning: false
 #| echo: true
 knitr::opts_chunk$set(tidy = TRUE)
-library(tidyverse) # Tidy data processing 
+
 library(ggformula) # Formula based plots
 library(mosaic) # Data inspection and Statistical Inference 
 library(broom) # Tidy outputs from Statistical Analyses
@@ -36,6 +36,8 @@ library(cowplot) # Arranging Plots
 library(patchwork) # Arranging Plots
 library(plotly) # 3D plots, should we need them
 
+library(tidyverse) # Tidy data processing 
+
 ```
 
 ```{r}
@@ -50,6 +52,91 @@ library(TeachingDemos)
 library(grateful)
 
 ```
+
+
+#### Plot Fonts and Theme
+
+```{r}
+#| label: plot-theme
+#| echo: fenced
+#| code-fold: true
+#| messages: false
+#| warning: false
+
+library(sysfonts)
+library(showtext)
+font_add(family = "Alegreya", regular = "../../../../gfonts/fonts/Alegreya/Alegreya-Regular.ttf")
+font_add(family = "Roboto Condensed", regular = "../../../../gfonts/fonts/RobotoCondensed-Regular.ttf")
+showtext_auto(enable = TRUE) #enable showtext
+##
+theme_custom <- function(){ 
+    font <- "Alegreya"   #assign font family up front
+    
+    theme_classic(base_size = 14) %+replace%    #replace elements we want to change
+    
+    theme(
+      text = element_text(family = font),  #set base font family
+      
+      #text elements
+      plot.title = element_text(                 #title
+                   family = "Alegreya",          #set font family
+                   size = 18,                    #set font size
+                   face = 'bold',                #bold typeface
+                   hjust = 0,                    #left align
+                   margin = margin(t = 5, r = 0, b = 5, l = 0)), #margin
+      plot.title.position = "plot", 
+      
+      plot.subtitle = element_text(              #subtitle
+                   family = "Alegreya",          #font family
+                   size = 14,                   #font size
+                   hjust = 0,                   #left align
+                   margin = margin(t = 5, r = 0, b = 10, l = 0)), #margin
+      
+      plot.caption = element_text(               #caption
+                   family = "Alegreya",          #font family
+                   size = 9,                     #font size
+                   hjust = 1),                   #right align
+      
+      plot.caption.position = "plot",            #right align
+      
+      axis.title = element_text(                 #axis titles
+                   family = "Roboto Condensed",  #font family
+                   size = 12),                   #font size
+      
+      axis.text = element_text(                  #axis text
+                   family = "Roboto Condensed",  #font family
+                   size = 9),                    #font size
+      
+      axis.text.x = element_text(                #margin for axis text
+                    margin = margin(5, b = 10))
+      
+      #since the legend often requires manual tweaking 
+      #based on plot content, don't define it here
+    )
+}
+
+```
+
+
+```{r}
+#| cache: false
+#| code-fold: true
+## Use available fonts in ggplot text geoms too!
+update_geom_defaults(geom = "text",new = list(
+  family = "Roboto Condensed",
+  face = "plain",
+  size = 3.5,
+  color = "#2b2b2b"
+)
+)
+
+## Set the theme
+theme_set(new = theme_custom())
+
+```
+
+
+
 
 ## {{< iconify openmoji japanese-symbol-for-beginner >}} Introduction
 
@@ -169,7 +256,8 @@ right side of this equation.
     effect in the model. A is adjusted for B and A:B. B is adjusted for
     A and A:B. The A:B interaction is adjusted for A and B.
 
-    R employs the Type I approach by default.
+[***R employs the Type I approach by default.***]{.black .bg-gold}
+    
 :::
 
 ### Effect Sizes

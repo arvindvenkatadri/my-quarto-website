@@ -17,8 +17,9 @@ knitr::include_graphics("featured.jpg")
 ```
 
 ```{r setup, include=FALSE}
+
 library(blogdown)
-library(hugodown)
+
 ```
 
 ```{r,echo=FALSE, fig.align='center',fig.alt="Image by Etienne Girardet on Unsplash" ,out.height="50%", out.width="50%"}

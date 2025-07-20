@@ -96,7 +96,7 @@ div.csl-indent {
 <link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-c23b7709e79dce8e83170d48840a32ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../../site_libs/bootstrap/bootstrap-f2ac2e442c7fd822dcfeb714f5086cee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../../site_libs/bootstrap/bootstrap-d5664ca1fdd2dd02efaccf936bd1c2a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../../../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script src="../../../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -1288,7 +1288,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 14, 2025</p>
+      <p class="date-modified">July 17, 2025</p>
     </div>
   </div>
     
@@ -1355,8 +1355,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 </ul></section><section id="setting-up-r-packages" class="level2"><h2 class="anchored" data-anchor-id="setting-up-r-packages">
 <iconify-icon inline="" icon="noto-v1:package" aria-label="Icon package from noto-v1 Iconify.design set." title="Icon package from noto-v1 Iconify.design set."></iconify-icon> Setting up R Packages</h2>
 <div class="cell">
-<div class="sourceCode" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># includes ggplot for plotting</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/mosaic">mosaic</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/mosaic">mosaic</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/ggformula">ggformula</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span> <span class="co"># colour palettes</span></span>
 <span></span>
@@ -1371,7 +1370,9 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span><span class="co">##</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jbengler/tidyplots">tidyplots</a></span><span class="op">)</span> <span class="co"># Easily Produced Publication-Ready Plots</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://grantmcdermott.com/tinyplot/">tinyplot</a></span><span class="op">)</span> <span class="co"># Plots with Base R</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/tinytable/">tinytable</a></span><span class="op">)</span> <span class="co"># Elegant Tables for our data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/tinytable/">tinytable</a></span><span class="op">)</span> <span class="co"># Elegant Tables for our data</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># includes ggplot for plotting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="plot-fonts-and-theme" class="level4"><h4 class="anchored" data-anchor-id="plot-fonts-and-theme">Plot Fonts and Theme</h4>
 <div class="cell" data-messages="false">
@@ -1448,19 +1449,33 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span>      <span class="co"># since the legend often requires manual tweaking</span></span>
 <span>      <span class="co"># based on plot content, don't define it here</span></span>
 <span>    <span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co">## Use available fonts in ggplot text geoms too!</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/update_defaults.html">update_geom_defaults</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"text"</span>, new <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  family <span class="op">=</span> <span class="st">"Roboto Condensed"</span>,</span>
-<span>  face <span class="op">=</span> <span class="st">"plain"</span>,</span>
-<span>  size <span class="op">=</span> <span class="fl">3.5</span>,</span>
-<span>  color <span class="op">=</span> <span class="st">"#2b2b2b"</span></span>
-<span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">## Set the theme</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Set the theme</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="at">new =</span> <span class="fu">theme_custom</span>())</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-error">
+<pre data-code-line-numbers=""><code>Error in theme_set(new = theme_custom()): could not find function "theme_set"</code></pre>
+</div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Use available fonts in ggplot text geoms too!</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">update_geom_defaults</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">new =</span> <span class="fu">list</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">face =</span> <span class="st">"plain"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="fl">3.5</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"#2b2b2b"</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-error">
+<pre data-code-line-numbers=""><code>Error in update_geom_defaults(geom = "text", new = list(family = "Roboto Condensed", : could not find function "update_geom_defaults"</code></pre>
+</div>
 </div>
 </section></section><section id="what-graphs-are-we-going-to-see-today" class="level2"><h2 class="anchored" data-anchor-id="what-graphs-are-we-going-to-see-today">
 <iconify-icon inline="" icon="fxemoji:japanesesymbolforbeginner" aria-label="Icon japanesesymbolforbeginner from fxemoji Iconify.design set." title="Icon japanesesymbolforbeginner from fxemoji Iconify.design set."></iconify-icon> What graphs are we going to see today?</h2>
@@ -1471,7 +1486,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <iconify-icon inline="" icon="openmoji:poppy" aria-label="Icon poppy from openmoji Iconify.design set." title="Icon poppy from openmoji Iconify.design set."></iconify-icon> Lollipop Charts</h2>
 <p>Let’s make a toy dataset of Products and Ratings:</p>
 <div class="cell">
-<div class="sourceCode" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Sample data set</span></span>
+<div class="sourceCode" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Sample data set</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
 <span>  product <span class="op">=</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span>,</span>
@@ -1498,7 +1513,9 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">###</span></span>
+<div class="sourceCode" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">###</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_segment.html">gf_segment</a></span><span class="op">(</span><span class="fl">0</span> <span class="op">+</span> <span class="va">rank</span> <span class="op">~</span> <span class="va">product</span> <span class="op">+</span> <span class="va">product</span>, data <span class="op">=</span> <span class="va">df1</span><span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="co"># A formula with shape y + yend ~ x + xend.</span></span>
 <span></span>
@@ -1507,13 +1524,14 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span>    size <span class="op">=</span> <span class="fl">5</span>,</span>
 <span>    ylab <span class="op">=</span> <span class="st">"Rank"</span>,</span>
 <span>    xlab <span class="op">=</span> <span class="st">"Product"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_aux.html">gf_labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Product Ratings"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1523,7 +1541,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_segment.html">gf_segment</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_segment.html">gf_segment</a></span><span class="op">(</span></span>
 <span>  <span class="fl">0</span> <span class="op">+</span> <span class="va">rank</span> <span class="op">~</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder</a></span><span class="op">(</span><span class="va">product</span>, <span class="op">-</span><span class="va">rank</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder</a></span><span class="op">(</span><span class="va">product</span>, <span class="op">-</span><span class="va">rank</span><span class="op">)</span>,</span>
 <span>  data <span class="op">=</span> <span class="va">df1</span></span>
@@ -1532,13 +1553,13 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_point.html">gf_point</a></span><span class="op">(</span><span class="va">rank</span> <span class="op">~</span> <span class="va">product</span>, colour <span class="op">=</span> <span class="op">~</span><span class="va">product</span>, size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_aux.html">gf_refine</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_aux.html">gf_labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Product"</span>, y <span class="op">=</span> <span class="st">"Rank"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_aux.html">gf_labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Product"</span>, y <span class="op">=</span> <span class="st">"Rank"</span>, title <span class="op">=</span> <span class="st">"Product Ratings"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1548,7 +1569,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <p>We have flipped the chart horizontally <em>and</em> reordered the <span class="math inline">\(x\)</span> categories in order of decreasing ( or increasing ) <span class="math inline">\(y\)</span>, using <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">forcats::fct_reorder</a></code>.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb10" data-code-line-numbers=""><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html">geom_segment</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span></span>
 <span>    y <span class="op">=</span> <span class="fl">0</span>, yend <span class="op">=</span> <span class="va">rank</span>,</span>
 <span>    x <span class="op">=</span> <span class="va">product</span>,</span>
@@ -1569,10 +1593,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="index_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="2100"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="2100"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="index_files/figure-html/unnamed-chunk-4-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="index_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="2100"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-5-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="index_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="2100"></a></p>
 </div>
 </div>
 </div>
@@ -1582,7 +1606,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggalt/man/geom_lollipop.html">geom_lollipop</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">rank</span>, y <span class="op">=</span> <span class="va">product</span><span class="op">)</span>,</span>
 <span>    point.size <span class="op">=</span> <span class="fl">3</span>, horizontal <span class="op">=</span> <span class="cn">F</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
@@ -1590,13 +1617,9 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>Warning: Using the `size` aesthetic with geom_segment was deprecated in ggplot2 3.4.0.
-ℹ Please use the `linewidth` aesthetic instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1606,7 +1629,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggalt/man/geom_lollipop.html">geom_lollipop</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">rank</span>, x <span class="op">=</span> <span class="va">product</span><span class="op">)</span>,</span>
 <span>    point.size <span class="op">=</span> <span class="fl">3</span>, horizontal <span class="op">=</span> <span class="cn">T</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
@@ -1616,7 +1642,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1626,20 +1652,24 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggalt/man/geom_lollipop.html">geom_lollipop</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">rank</span>, x <span class="op">=</span> <span class="va">product</span><span class="op">)</span>,</span>
 <span>    point.size <span class="op">=</span> <span class="fl">3</span>, , horizontal <span class="op">=</span> <span class="cn">F</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
 <span>    title <span class="op">=</span> <span class="st">"Yeah, but I want this horizontal..."</span>,</span>
-<span>    subtitle <span class="op">=</span> <span class="st">"And with colour and sorted and..."</span></span>
+<span>    subtitle <span class="op">=</span> <span class="st">"And with colour and sorted and..."</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Peasants...they want everything..."</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1649,7 +1679,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggalt/man/geom_lollipop.html">geom_lollipop</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span></span>
 <span>      x <span class="op">=</span> <span class="va">rank</span>,</span>
@@ -1661,14 +1694,15 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
 <span>    title <span class="op">=</span> <span class="st">"Now you're talking"</span>,</span>
-<span>    x <span class="op">=</span> <span class="st">"Rank"</span>, y <span class="op">=</span> <span class="st">"Product"</span></span>
+<span>    x <span class="op">=</span> <span class="st">"Rank"</span>, y <span class="op">=</span> <span class="st">"Product"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Take that, peasants!"</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1703,7 +1737,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <p>A lollipop chart compares a set of data against <em>one aspect</em>. What if we have more than one? Say sales in many product lines <em>across two years</em>?</p>
 <p>Let us once again construct a very similar looking toy dataset, but with <em>two</em> columns for ratings, one for each of two years:</p>
 <div class="cell">
-<div class="sourceCode" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Sample data set</span></span>
+<div class="sourceCode" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Sample data set</span></span>
 <span><span class="co"># Wide Format data!</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
@@ -1734,7 +1768,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="callout-body-container callout-body">
 <p>Look at the data: this is <strong>wide form data</strong>. The columns pertaining to each of the Product-Features would normally be stacked into two columns, one with the Feature and the other with the score. Note the trio: Qual(product) + Qual(year) + Quant(scores):</p>
 <div class="cell">
-<div class="sourceCode" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># With Long Format Data</span></span>
+<div class="sourceCode" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># With Long Format Data</span></span>
 <span><span class="va">df2_long</span> <span class="op">&lt;-</span> <span class="va">df2</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"rank"</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -1767,11 +1801,14 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## With Wide Form Data</span></span>
+<div class="sourceCode" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## With Wide Form Data</span></span>
 <span><span class="co">##</span></span>
 <span><span class="va">df2</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_segment.html">gf_segment</a></span><span class="op">(</span><span class="va">product</span> <span class="op">+</span> <span class="va">product</span> <span class="op">~</span> <span class="va">rank_year1</span> <span class="op">+</span> <span class="va">rank_year2</span>,</span>
-<span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"#e3e2e1"</span>,</span>
+<span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"grey60"</span>,</span>
 <span>    arrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/arrow.html">arrow</a></span><span class="op">(</span></span>
 <span>      angle <span class="op">=</span> <span class="fl">30</span>,</span>
 <span>      length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">0.25</span>, <span class="st">"inches"</span><span class="op">)</span>,</span>
@@ -1790,13 +1827,9 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1806,13 +1839,16 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Rearranging `product` in order of rank_year2</span></span>
+<div class="sourceCode" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Rearranging `product` in order of rank_year2</span></span>
 <span><span class="va">df2</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_segment.html">gf_segment</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">product</span>, <span class="va">rank_year2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>      <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">product</span>, <span class="va">rank_year2</span><span class="op">)</span> <span class="op">~</span></span>
 <span>      <span class="va">rank_year1</span> <span class="op">+</span> <span class="va">rank_year2</span>,</span>
-<span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"#e3e2e1"</span>,</span>
+<span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"grey60"</span>,</span>
 <span>    arrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/arrow.html">arrow</a></span><span class="op">(</span></span>
 <span>      angle <span class="op">=</span> <span class="fl">30</span>,</span>
 <span>      length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">0.25</span>, <span class="st">"inches"</span><span class="op">)</span></span>
@@ -1835,7 +1871,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1845,7 +1881,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## With Wide Format Data</span></span>
+<div class="sourceCode" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## With Wide Format Data</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">product</span>, yend <span class="op">=</span> <span class="va">product</span>, x <span class="op">=</span> <span class="va">rank_year1</span>, xend <span class="op">=</span> <span class="va">rank_year2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html">geom_segment</a></span><span class="op">(</span></span>
 <span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"#e3e2e1"</span>,</span>
@@ -1863,11 +1902,11 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Rank"</span>, y <span class="op">=</span> <span class="st">"Product"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Rearranging `product` in order of rank_year2</span></span>
+<div class="sourceCode" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Rearranging `product` in order of rank_year2</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">product</span>, <span class="va">rank_year2</span><span class="op">)</span>, yend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">product</span>, <span class="va">rank_year2</span><span class="op">)</span>, x <span class="op">=</span> <span class="va">rank_year1</span>, xend <span class="op">=</span> <span class="va">rank_year2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html">geom_segment</a></span><span class="op">(</span></span>
 <span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"#e3e2e1"</span>,</span>
@@ -1888,7 +1927,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-13-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="index_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-14-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="index_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1898,14 +1937,17 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df2</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df2</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggalt/man/geom_dumbbell.html">geom_dumbbell</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span></span>
 <span>      y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">product</span>, <span class="va">rank_year2</span><span class="op">)</span>,</span>
 <span>      x <span class="op">=</span> <span class="va">rank_year1</span>,</span>
 <span>      xend <span class="op">=</span> <span class="va">rank_year2</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"#e3e2e1"</span>,</span>
+<span>    size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"grey60"</span>,</span>
 <span>    colour_x <span class="op">=</span> <span class="st">"#5b8124"</span>,</span>
 <span>    colour_xend <span class="op">=</span> <span class="st">"#bad744"</span>,</span>
 <span>    dot_guide <span class="op">=</span> <span class="cn">TRUE</span>, <span class="co"># Try FALSE</span></span>
@@ -1922,13 +1964,9 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
-ℹ Please use the `linewidth` argument instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1940,17 +1978,21 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df2_long</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<div class="sourceCode" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df2_long</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_col.html">gf_col</a></span><span class="op">(</span><span class="va">product</span> <span class="op">~</span> <span class="va">scores</span>,</span>
 <span>    group <span class="op">=</span> <span class="op">~</span><span class="va">year</span>,</span>
 <span>    fill <span class="op">=</span> <span class="op">~</span><span class="va">year</span>, position <span class="op">=</span> <span class="st">"dodge"</span></span>
-<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_aux.html">gf_labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Bar Plot for Comparison"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1984,7 +2026,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <iconify-icon inline="" icon="teenyicons:curved-connector-outline" aria-label="Icon curved-connector-outline from teenyicons Iconify.design set." title="Icon curved-connector-outline from teenyicons Iconify.design set."></iconify-icon> Bump Charts</h2>
 <p>Bump Charts track the ranking of several objects based on <em>other</em> parameters, such as time/month or even category. For instance, what is the opinion score of a set of products across various categories of users?</p>
 <div class="cell">
-<div class="sourceCode" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span>, <span class="fl">4</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span>, <span class="fl">4</span><span class="op">)</span></span>
 <span><span class="va">position</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">1</span>, <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">4</span>, <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">product</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>,</span>
@@ -1993,13 +2035,14 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span>  <span class="st">"D"</span>, <span class="st">"D"</span>, <span class="st">"D"</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">position</span>, <span class="va">product</span><span class="op">)</span></span>
+<span><span class="va">df3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">position</span>, <span class="va">product</span><span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/as_factor.html">as_factor</a></span><span class="op">(</span><span class="va">product</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["int"],"align":["right"]},{"label":["position"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["product"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"2019","2":"4","3":"A"},{"1":"2020","2":"2","3":"A"},{"1":"2021","2":"2","3":"A"},{"1":"2019","2":"3","3":"B"},{"1":"2020","2":"1","3":"B"},{"1":"2021","2":"4","3":"B"},{"1":"2019","2":"2","3":"C"},{"1":"2020","2":"3","3":"C"},{"1":"2021","2":"1","3":"C"},{"1":"2019","2":"1","3":"D"},{"1":"2020","2":"4","3":"D"},{"1":"2021","2":"3","3":"D"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["int"],"align":["right"]},{"label":["position"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["product"],"name":[3],"type":["fct"],"align":["left"]}],"data":[{"1":"2019","2":"4","3":"A"},{"1":"2020","2":"2","3":"A"},{"1":"2021","2":"2","3":"A"},{"1":"2019","2":"3","3":"B"},{"1":"2020","2":"1","3":"B"},{"1":"2021","2":"4","3":"B"},{"1":"2019","2":"2","3":"C"},{"1":"2020","2":"3","3":"C"},{"1":"2021","2":"1","3":"C"},{"1":"2019","2":"1","3":"D"},{"1":"2020","2":"4","3":"D"},{"1":"2021","2":"3","3":"D"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2022,26 +2065,26 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df3</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<div class="sourceCode" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df3</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggbump/man/geom_bump.html">geom_bump</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">position</span>, color <span class="op">=</span> <span class="va">product</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">position</span>, color <span class="op">=</span> <span class="va">product</span><span class="op">)</span>,</span>
 <span>    size <span class="op">=</span> <span class="fl">6</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Bump Chart: Product Ranks over Time"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Rank"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"RdBu"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># Change Colour Scale</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span> <span class="co"># Check warning here...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># Change Colour Scale</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>Warning in scale_x_discrete(limits = c(2019:2021)): Continuous limits supplied to discrete scale.
-ℹ Did you mean `limits = factor(...)` or `scale_*_continuous()`?</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-17-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-18-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -2052,7 +2095,10 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df3</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Set the theme</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu">theme_custom</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df3</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggbump/man/geom_bump.html">geom_bump</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">position</span>, color <span class="op">=</span> <span class="va">product</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">position</span>, color <span class="op">=</span> <span class="va">product</span><span class="op">)</span>,</span>
 <span>    size <span class="op">=</span> <span class="fl">6</span></span>
@@ -2077,20 +2123,20 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <span>    <span class="op">)</span>,</span>
 <span>    size <span class="op">=</span> <span class="fl">5</span>, hjust <span class="op">=</span> <span class="fl">0</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Bump Chart: Product Ranks over Time"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Note the Labels!"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Rank"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>Warning in scale_x_discrete(limits = c(2019:2021)): Continuous limits supplied to discrete scale.
-ℹ Did you mean `limits = factor(...)` or `scale_*_continuous()`?</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-18-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-19-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -2121,7 +2167,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <p>Of course, we will use the aptly named <code>ggradar</code>, which is at this time (Feb 2023) a development version and not yet part of CRAN. We will still try it, and another package <code>ggiraphExtra</code> which IS a part of CRAN (and has some other capabilities too, which are worth exploring!)</p>
 <p>Let us generate some toy data first:</p>
 <div class="cell">
-<div class="sourceCode" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span>
 <span><span class="va">df4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
 <span>  Product <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"G1"</span>, <span class="st">"G2"</span>, <span class="st">"G3"</span><span class="op">)</span>,</span>
 <span>  Power <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>,</span>
@@ -2154,8 +2200,9 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggradar</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggradar/man/ggradar-package.html">ggradar</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggradar</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggradar/man/ggradar-package.html">ggradar</a></span><span class="op">(</span></span>
 <span>  plot.data <span class="op">=</span> <span class="va">df4</span>,</span>
+<span>  plot.title <span class="op">=</span> <span class="st">"Made with ggradar"</span>,</span>
 <span>  axis.label.size <span class="op">=</span> <span class="fl">3</span>, <span class="co"># Titles of Params</span></span>
 <span>  grid.label.size <span class="op">=</span> <span class="fl">4</span>, <span class="co"># Score Values/Circles</span></span>
 <span>  group.point.size <span class="op">=</span> <span class="fl">3</span>, <span class="co"># Product Points Sizes</span></span>
@@ -2170,7 +2217,7 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-19-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-20-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -2186,20 +2233,20 @@ Figure&nbsp;1: Dumbbell and Radar Charts for Ranking
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggiraphExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggiraphExtra/man/ggRadar.html">ggRadar</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggiraphExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggiraphExtra/man/ggRadar.html">ggRadar</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">df4</span>,</span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">Product</span><span class="op">)</span>,</span>
 <span>  interactive <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># try TRUE</span></span>
-<span>  rescale <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  rescale <span class="op">=</span> <span class="cn">F</span>, <span class="co"># rescale = TRUE makes it look different...try!!</span></span>
 <span>  title <span class="op">=</span> <span class="st">"Using ggiraphExtra"</span></span>
-<span><span class="op">)</span> <span class="op">+</span> <span class="co"># recale = TRUE makes it look different...try!!</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"Roboto Condensed"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-20-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-21-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>

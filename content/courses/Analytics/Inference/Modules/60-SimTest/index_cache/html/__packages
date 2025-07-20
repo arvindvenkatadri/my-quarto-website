@@ -7,3 +7,15 @@ mosaicData
 mosaic
 scales
 ggridges
+tidyverse
+tibble
+tidyr
+readr
+purrr
+stringr
+forcats
+lubridate
+systemfonts
+sysfonts
+showtextdb
+showtext

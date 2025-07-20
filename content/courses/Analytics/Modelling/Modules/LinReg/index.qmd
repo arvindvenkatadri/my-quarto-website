@@ -38,14 +38,13 @@ webr:
 #| warning: false
 #| include: true
 
-library(tidyverse)
 library(ggformula)
 library(mosaic)
 library(GGally)
 library(corrplot)
 library(corrgram)
 library(ggstatsplot)
-
+library(tidyverse)
 ```
 
 ```{r}
@@ -141,6 +140,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -150,8 +158,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 

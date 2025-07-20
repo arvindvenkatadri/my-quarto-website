@@ -15,8 +15,12 @@ mosaicData
 mosaic
 skimr
 ggridges
-downloadthis
-glue
-scales
 crosstable
 paletteer
+downloadthis
+glue
+systemfonts
+sysfonts
+showtextdb
+showtext
+scales

@@ -18,3 +18,5 @@ downloadthis
 knitr
 kableExtra
 resampledata
+scales
+ggridges

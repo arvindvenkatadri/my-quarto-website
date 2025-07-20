@@ -48,11 +48,6 @@ webr:
 #| message: false
 #| warning: false
 
-library(tidyverse) # Tidy data processing and plotting
-library(ggformula) # Formula based plots
-library(mosaic) # Our go-to package
-library(skimr) # Another Data inspection package
-
 library(GGally) # Corr plots
 library(corrplot) # More corrplots
 library(ggExtra) # Making Combination Plots
@@ -69,6 +64,12 @@ library(correlation) # Different Types of Correlations
 library(tidyplots) # Easily Produced Publication-Ready Plots
 library(tinyplot) # Plots with Base R
 library(tinytable) # Elegant Tables for our data
+
+
+library(ggformula) # Formula based plots
+library(mosaic) # Our go-to package
+library(skimr) # Another Data inspection package
+library(tidyverse) # Tidy data processing and plotting
 
 ```
 
@@ -188,6 +189,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -197,12 +207,8 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
-
-
 
 
 ## {{< iconify material-symbols add-chart-outline >}} What graphs will we see today?
@@ -1213,7 +1219,7 @@ cor %>%
 - Since none of the error bars straddle zero, the correlations are mostly significant. 
 :::
 
-:::
+::::
 
 
 ### {{< iconify carbon qq-plot >}} {{< iconify fluent bezier-curve-square-12-regular rotate="90deg" >}} A New Combination Plot...
@@ -1225,18 +1231,15 @@ Sometimes, a simple scatter, or density alone, or viewed next to one another is 
 #| warning: false
 #| message: false
 
-theme_set(theme_custom())
-
 penguins %>% 
   drop_na() %>% 
   gf_point(body_mass_g  ~ flipper_length_mm, colour = ~ species) %>% 
   gf_smooth(method = "lm") %>% 
+  gf_labs(x = "Flipper Length", y = "Body Mass in gms", title = "Penguins Scatter Plot", subtitle = "With Marginal Densities", caption = "Using ggExtra") %>%
   gf_refine(scale_colour_brewer(palette = "Accent")) %>% 
   gf_labs(title = "Scatter Plot with Marginal Densities") %>% 
   ggExtra::ggMarginal(type = "density", groupColour = TRUE, 
                       groupFill = TRUE, margins = "both") 
-  
-
 
 ```
 

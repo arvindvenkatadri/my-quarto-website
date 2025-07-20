@@ -14,8 +14,12 @@ ggformula
 mosaicData
 mosaic
 skimr
+scales
 downloadthis
 glue
+systemfonts
+sysfonts
+showtextdb
+showtext
 tidytuesdayR
-scales
 ggridges

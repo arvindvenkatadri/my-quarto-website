@@ -2,7 +2,7 @@
   "hash": "a5c163bb910da6b8fbeb55e05810bffc",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Working with Agents\"\n---\n\n::: {.cell}\n\n:::\n\n",
+    "markdown": "---\ntitle: \"Working with Agents\"\n---\n\n\n::: {.cell}\n\n:::\n\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

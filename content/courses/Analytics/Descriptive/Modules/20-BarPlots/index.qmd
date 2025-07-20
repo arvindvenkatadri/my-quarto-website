@@ -45,14 +45,14 @@ webr:
 #| message: false
 #| warning: false
 
-library(tidyverse)
-library(mosaic)
-library(ggformula)
-library(skimr)
-##
+
 library(tidyplots) # Easily Produced Publication-Ready Plots
 library(tinyplot) # Plots with Base R
 library(tinytable) # Elegant Tables for our data
+library(mosaic)
+library(skimr)
+library(ggformula)
+library(tidyverse) # Most Important Last
 
 ```
 
@@ -172,6 +172,15 @@ theme_custom <- function(){
     )
 }
 
+```
+
+```{r}
+#| cache: false
+#| echo: fenced
+#| code-fold: true
+## Set the theme
+theme_set(new = theme_custom())
+
 ## Use available fonts in ggplot text geoms too!
 update_geom_defaults(geom = "text",new = list(
   family = "Roboto Condensed",
@@ -181,8 +190,6 @@ update_geom_defaults(geom = "text",new = list(
 )
 )
 
-## Set the theme
-theme_set(new = theme_custom())
 
 ```
 

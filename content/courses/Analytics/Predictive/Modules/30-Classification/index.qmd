@@ -309,14 +309,10 @@ the Desision Tree for the same dataset.
 ## References
 
 1.  <https://towardsdatascience.com/data-science-made-easy-data-modeling-and-prediction-using-orange-f451f17061fa>
-
 2.  The beauty of Random Forests:
     <https://orangedatamining.com/blog/2016/12/22/the-beauty-of-random-forest/>
-
 3.  Pythagorean Trees for Random Forests:
     <https://orangedatamining.com/blog/2016/07/29/pythagorean-trees-and-forests/>
-
 4.  *data.tree* sample applications, Christoph Glur, 2020-07-31.
     <https://cran.r-project.org/web/packages/data.tree/vignettes/applications.html>
-
 5.  <https://ryjohnson09.netlify.app/post/caret-and-tidymodels/>

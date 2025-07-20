@@ -43,31 +43,22 @@ categories:
 1.  *Getting started with Flourish & Figma to create beautiful custom
     charts*,
     <https://inside.mediahack.co.za/getting-started-with-flourish-figma-to-create-beautiful-custom-charts-34e4efb8fd3d>
-
 2.  Flowing Data Chart Types <https://flowingdata.com/chart-types/>
-
 3.  Geeks for Geeks: Chart Types
     <https://www.geeksforgeeks.org/r-charts-and-graphs/>
-
 4.  Financial Times Visual Vocabulary (Interactive)
     <https://ft-interactive.github.io/visual-vocabulary/>
-
 5.  Financial Times Visual Vocabulary (PDF)
     <https://github.com/Financial-Times/chart-doctor/blob/main/visual-vocabulary/FT4schools_RGS.pdf>
-
 6.  Financial Times Data Journalism Visuals
     <https://www.ft.com/visual-and-data-journalism>
-
 7.  Severino Ribecca and John Schwabish , *The Graphic Continuum*
     <https://www.severinoribecca.one/portfolio-item/the-graphic-continuum/>
-
 8.  Web based tools for Dataviz
     <https://policyviz.com/resources/data-viz-tools/>
-
 9.  Nightingale Data Visualization Society Blog: **How to visualize
     categorical data**:
     <https://nightingaledvs.com/endless-river-an-overview-of-dataviz-for-categorical-data/>
-
 10. John Schwabish's *policyviz* Data Viz catalogue:
     <https://datastudio.google.com/s/quUUlgosF4U>
 

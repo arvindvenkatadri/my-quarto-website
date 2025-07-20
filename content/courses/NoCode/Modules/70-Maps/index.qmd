@@ -121,7 +121,7 @@ Let us look first at the data table.
 ### Long and Lat
 Note the presence of specific Longitude Latitude columns in the data. 
 Why am I saying this in that peculiar order
-??`r emoji::emoji("thought")`
+??`r emoji::emoji("think")`
 :::
 
 ![European Cities Maps](../../../../materials/images/Orange/geo-and-choropleth.png){#fig-map-euro-cities}
