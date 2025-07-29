@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -36,10 +71,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-6220997714f3b724eb13a73015bf6622.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-eec86dda9e35c9ea34dcd72ea57dab92.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-d23b20a79c94e85a57be8a4b9dfe528a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c8218f88302425db1c7973ffd1efa8f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -98,8 +133,6 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../logos/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors</span>
     </a>
@@ -531,7 +564,26 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 "></ul>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/courses/Analytics/UsingAI/Modules/10-GithubPilot/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using Github Pilot for Code Completion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/courses/Analytics/UsingAI/Modules/20-ellmer-gander/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using <code>ellmer</code> and <code>gander</code> for Code Completion and Chat</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/courses/Analytics/UsingAI/Modules/30-Connecting-LMStudio/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connecting LMStudio to RStudio</span></a>
+  </div>
+</li>
+      </ul>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -757,6 +809,12 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/courses/MathModelsDesign/Modules/05-Maths/10-Complex/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><iconify-icon icon="ph:circles-three-fill" width="1.2em" height="1.2em"></iconify-icon><iconify-icon icon="gravity-ui:function" width="1.2em" height="1.2em"></iconify-icon> Complex Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/courses/MathModelsDesign/Modules/05-Maths/20-Vectors/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><iconify-icon icon="ph:circles-three-fill" width="1.2em" height="1.2em"></iconify-icon><iconify-icon icon="gravity-ui:function" width="1.2em" height="1.2em"></iconify-icon> Vectors</span></a>
   </div>
@@ -765,6 +823,12 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../../../content/courses/MathModelsDesign/Modules/05-Maths/50-Matrices/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrix Algebra Whirlwind Tour</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/courses/MathModelsDesign/Modules/05-Maths/60-Orthogonality/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><iconify-icon icon="ph:circles-three-fill" width="1.2em" height="1.2em"></iconify-icon><iconify-icon icon="gravity-ui:function" width="1.2em" height="1.2em"></iconify-icon> Things at Right Angles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -797,6 +861,12 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../../../content/courses/MathModelsDesign/Modules/500-Tech/30-Constructors/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using Constructor Objects in p5.js</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/courses/MathModelsDesign/Modules/500-Tech/50-OSC/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Open Sound Protocol</span></a>
   </div>
 </li>
       </ul>
@@ -1139,6 +1209,12 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 </li>
       </ul>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/courses/ComputationalWorlds/listing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">It’s A Computational World</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item">
@@ -1203,7 +1279,7 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 17, 2025</p>
+      <p class="date-modified">July 29, 2025</p>
     </div>
   </div>
     
@@ -1211,7 +1287,110 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
   
 
 
-</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</header><section id="plot-fonts-and-theme" class="level4"><h4 class="anchored" data-anchor-id="plot-fonts-and-theme">Plot Fonts and Theme</h4>
+<div class="cell" data-messages="false">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(systemfonts)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(showtext)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="do">## Clean the slate</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>systemfonts<span class="sc">::</span><span class="fu">clear_local_fonts</span>()</span>
+<span id="cb1-5"><a href="#cb1-5"></a>systemfonts<span class="sc">::</span><span class="fu">clear_registry</span>()</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="do">##</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">showtext_opts</span>(<span class="at">dpi =</span> <span class="dv">96</span>) <span class="co"># set DPI for showtext</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>sysfonts<span class="sc">::</span><span class="fu">font_add</span>(</span>
+<span id="cb1-9"><a href="#cb1-9"></a>  <span class="at">family =</span> <span class="st">"Alegreya"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="at">regular =</span> <span class="st">"../../../fonts/Alegreya-Regular.ttf"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="at">bold =</span> <span class="st">"../../../fonts/Alegreya-Bold.ttf"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>  <span class="at">italic =</span> <span class="st">"../../../fonts/Alegreya-Italic.ttf"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="at">bolditalic =</span> <span class="st">"../../../fonts/Alegreya-BoldItalic.ttf"</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>)</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a>sysfonts<span class="sc">::</span><span class="fu">font_add</span>(</span>
+<span id="cb1-17"><a href="#cb1-17"></a>  <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18"></a>  <span class="at">regular =</span> <span class="st">"../../../fonts/RobotoCondensed-Regular.ttf"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19"></a>  <span class="at">bold =</span> <span class="st">"../../../fonts/RobotoCondensed-Bold.ttf"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20"></a>  <span class="at">italic =</span> <span class="st">"../../../fonts/RobotoCondensed-Italic.ttf"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21"></a>  <span class="at">bolditalic =</span> <span class="st">"../../../fonts/RobotoCondensed-BoldItalic.ttf"</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>)</span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="fu">showtext_auto</span>(<span class="at">enable =</span> <span class="cn">TRUE</span>) <span class="co"># enable showtext</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="do">##</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>theme_custom <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb1-26"><a href="#cb1-26"></a>  font <span class="ot">&lt;-</span> <span class="st">"Alegreya"</span> <span class="co"># assign font family up front</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">14</span>, <span class="at">base_family =</span> font) <span class="sc">%+replace%</span> <span class="co"># replace elements we want to change</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a></span>
+<span id="cb1-30"><a href="#cb1-30"></a>    <span class="fu">theme</span>(</span>
+<span id="cb1-31"><a href="#cb1-31"></a>      <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> font), <span class="co"># set base font family</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a>      <span class="co"># text elements</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>( <span class="co"># title</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a>        <span class="at">family =</span> font, <span class="co"># set font family</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a>        <span class="at">size =</span> <span class="dv">24</span>, <span class="co"># set font size</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a>        <span class="at">face =</span> <span class="st">"bold"</span>, <span class="co"># bold typeface</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a>        <span class="at">hjust =</span> <span class="dv">0</span>, <span class="co"># left align</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a>        <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">5</span>, <span class="at">l =</span> <span class="dv">0</span>)</span>
+<span id="cb1-40"><a href="#cb1-40"></a>      ), <span class="co"># margin</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a>      <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb1-42"><a href="#cb1-42"></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>( <span class="co"># subtitle</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a>        <span class="at">family =</span> font, <span class="co"># font family</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a>        <span class="at">size =</span> <span class="dv">14</span>, <span class="co"># font size</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a>        <span class="at">hjust =</span> <span class="dv">0</span>, <span class="co"># left align</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a>        <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">10</span>, <span class="at">l =</span> <span class="dv">0</span>)</span>
+<span id="cb1-47"><a href="#cb1-47"></a>      ), <span class="co"># margin</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a></span>
+<span id="cb1-49"><a href="#cb1-49"></a>      <span class="at">plot.caption =</span> <span class="fu">element_text</span>( <span class="co"># caption</span></span>
+<span id="cb1-50"><a href="#cb1-50"></a>        <span class="at">family =</span> font, <span class="co"># font family</span></span>
+<span id="cb1-51"><a href="#cb1-51"></a>        <span class="at">size =</span> <span class="dv">9</span>, <span class="co"># font size</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a>        <span class="at">hjust =</span> <span class="dv">1</span></span>
+<span id="cb1-53"><a href="#cb1-53"></a>      ), <span class="co"># right align</span></span>
+<span id="cb1-54"><a href="#cb1-54"></a></span>
+<span id="cb1-55"><a href="#cb1-55"></a>      <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>, <span class="co"># right align</span></span>
+<span id="cb1-56"><a href="#cb1-56"></a></span>
+<span id="cb1-57"><a href="#cb1-57"></a>      <span class="at">axis.title =</span> <span class="fu">element_text</span>( <span class="co"># axis titles</span></span>
+<span id="cb1-58"><a href="#cb1-58"></a>        <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>, <span class="co"># font family</span></span>
+<span id="cb1-59"><a href="#cb1-59"></a>        <span class="at">size =</span> <span class="dv">12</span></span>
+<span id="cb1-60"><a href="#cb1-60"></a>      ), <span class="co"># font size</span></span>
+<span id="cb1-61"><a href="#cb1-61"></a></span>
+<span id="cb1-62"><a href="#cb1-62"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="co"># axis text</span></span>
+<span id="cb1-63"><a href="#cb1-63"></a>        <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>, <span class="co"># font family</span></span>
+<span id="cb1-64"><a href="#cb1-64"></a>        <span class="at">size =</span> <span class="dv">9</span></span>
+<span id="cb1-65"><a href="#cb1-65"></a>      ), <span class="co"># font size</span></span>
+<span id="cb1-66"><a href="#cb1-66"></a></span>
+<span id="cb1-67"><a href="#cb1-67"></a>      <span class="at">axis.text.x =</span> <span class="fu">element_text</span>( <span class="co"># margin for axis text</span></span>
+<span id="cb1-68"><a href="#cb1-68"></a>        <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">5</span>, <span class="at">b =</span> <span class="dv">10</span>)</span>
+<span id="cb1-69"><a href="#cb1-69"></a>      )</span>
+<span id="cb1-70"><a href="#cb1-70"></a></span>
+<span id="cb1-71"><a href="#cb1-71"></a>      <span class="co"># since the legend often requires manual tweaking</span></span>
+<span id="cb1-72"><a href="#cb1-72"></a>      <span class="co"># based on plot content, don't define it here</span></span>
+<span id="cb1-73"><a href="#cb1-73"></a>    )</span>
+<span id="cb1-74"><a href="#cb1-74"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#| cache: false</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="do">## Set the theme</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">theme_set</span>(<span class="at">new =</span> <span class="fu">theme_custom</span>())</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-error">
+<pre data-code-line-numbers=""><code>Error in theme_set(new = theme_custom()): could not find function "theme_set"</code></pre>
+</div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#| cache: false</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="do">## Use available fonts in ggplot text geoms too!</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">update_geom_defaults</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">new =</span> <span class="fu">list</span>(</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="at">face =</span> <span class="st">"plain"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="at">size =</span> <span class="fl">3.5</span>,</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="at">color =</span> <span class="st">"#2b2b2b"</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>))</span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-error">
+<pre data-code-line-numbers=""><code>Error in update_geom_defaults(geom = "text", new = list(family = "Roboto Condensed", : could not find function "update_geom_defaults"</code></pre>
+</div>
+</div>
+</section><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This project is a quick analysis of the Design of Experiments class carried out in the Order and Chaos course, FSP-2021-2022, at SMI MAHE, Bangalore.</p>
 <p>The methodology followed was that in A.J. Lawrance’s paper <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> describing a Statistics module based on the method of Design of Experiments. The inquiry relates to Short Term Memory (STM) among students.</p>
 </section><section id="structure" class="level2"><h2 class="anchored" data-anchor-id="structure">Structure</h2>
@@ -1230,7 +1409,13 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 <p>The data was then “flattened” for each of the binary parameters; this was logical to do since for each parameter, the other two parameters were balanced out by the Test structure. For instance, for WL = 5, the SL and ST parameters used all the four combinations ( SL = 5, 15 ) and (ST = 15, 30 ). Hence the “common sense” analysis could proceed for each of the parameters individually. Joint effects were not considered for this preliminary class.</p>
 </section><section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
 <div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>stm <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"RandomTesters.xlsx"</span>,</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="at">sheet =</span> <span class="st">"Data"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="at">range =</span> <span class="st">"C31:H91"</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb6-6"><a href="#cb6-6"></a>stm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["syllable_2"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["syllable_5"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["study_time_15"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["study_time_30"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["list_length_7"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["list_length_15"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.7142857","2":"0.57142857","3":"0.71428571","4":"0.7142857","5":"0.7142857","6":"0.26670000"},{"1":"0.4285714","2":"0.57142857","3":"0.42857143","4":"0.5714286","5":"0.4285714","6":"0.20000000"},{"1":"0.5714286","2":"0.71428571","3":"0.57142857","4":"0.5714286","5":"0.5714286","6":"0.06670000"},{"1":"0.7142857","2":"1.00000000","3":"0.71428571","4":"0.5714286","5":"0.7142857","6":"0.13330000"},{"1":"0.7142857","2":"1.00000000","3":"0.71428571","4":"1.0000000","5":"0.7142857","6":"0.20000000"},{"1":"0.7142857","2":"0.85714286","3":"0.71428571","4":"0.7142857","5":"0.7142857","6":"0.13330000"},{"1":"0.5714286","2":"0.57142857","3":"0.57142857","4":"0.5714286","5":"0.5714286","6":"0.33340000"},{"1":"0.5714286","2":"0.71428571","3":"0.57142857","4":"0.5714286","5":"0.5714286","6":"0.53330000"},{"1":"0.5714286","2":"0.85714286","3":"0.57142857","4":"1.0000000","5":"0.5714286","6":"0.20000000"},{"1":"0.5714286","2":"1.00000000","3":"0.57142857","4":"0.4285714","5":"0.5714286","6":"0.13330000"},{"1":"0.7142857","2":"0.85714286","3":"0.71428571","4":"0.4285714","5":"0.7142857","6":"0.26670000"},{"1":"0.7142857","2":"0.71428571","3":"0.71428571","4":"0.4285714","5":"0.7142857","6":"0.26670000"},{"1":"0.7142857","2":"0.57142857","3":"0.71428571","4":"0.5714286","5":"0.7142857","6":"0.06670000"},{"1":"0.7142857","2":"0.57142857","3":"0.71428571","4":"0.7142857","5":"0.7142857","6":"0.13330000"},{"1":"0.4285714","2":"0.57142857","3":"0.42857143","4":"0.5714286","5":"0.4285714","6":"0.26670000"},{"1":"0.7142857","2":"0.57100000","3":"0.57142857","4":"0.5710000","5":"0.5714286","6":"0.33333333"},{"1":"0.5714286","2":"0.57100000","3":"0.57142857","4":"0.5710000","5":"0.5714286","6":"0.13333333"},{"1":"0.5714286","2":"0.71400000","3":"0.71428571","4":"0.7140000","5":"0.7142857","6":"0.13333333"},{"1":"0.5714286","2":"0.28500000","3":"1.00000000","4":"0.2850000","5":"1.0000000","6":"0.13333333"},{"1":"1.0000000","2":"0.51400000","3":"1.00000000","4":"0.5140000","5":"1.0000000","6":"0.20000000"},{"1":"0.7142857","2":"0.71400000","3":"0.85714286","4":"0.7140000","5":"0.8571429","6":"0.33333333"},{"1":"0.5714286","2":"0.42800000","3":"0.57142857","4":"0.4280000","5":"0.5714286","6":"0.13333333"},{"1":"0.5714286","2":"0.57100000","3":"0.71428571","4":"0.5710000","5":"0.7142857","6":"0.20000000"},{"1":"1.0000000","2":"0.71400000","3":"0.85714286","4":"0.7140000","5":"0.8571429","6":"0.20000000"},{"1":"0.4285714","2":"0.57100000","3":"1.00000000","4":"0.5710000","5":"1.0000000","6":"0.20000000"},{"1":"0.4285714","2":"0.57000000","3":"0.85714286","4":"0.5700000","5":"0.8571429","6":"0.13333333"},{"1":"0.4285714","2":"0.28500000","3":"0.71428571","4":"0.2850000","5":"0.7142857","6":"0.06666667"},{"1":"0.5714286","2":"0.42800000","3":"0.57142857","4":"0.4280000","5":"0.5714286","6":"0.13333333"},{"1":"0.7142857","2":"0.42800000","3":"0.57142857","4":"0.4280000","5":"0.5714286","6":"0.20000000"},{"1":"0.5714286","2":"0.42800000","3":"0.57142857","4":"0.4280000","5":"0.5714286","6":"0.26666667"},{"1":"0.2667000","2":"0.33333333","3":"0.26670000","4":"0.4666667","5":"0.7142857","6":"0.46666667"},{"1":"0.2000000","2":"0.13333333","3":"0.20000000","4":"0.4666667","5":"0.5714286","6":"0.46666667"},{"1":"0.0667000","2":"0.13333333","3":"0.06670000","4":"0.4666667","5":"0.5714286","6":"0.46666667"},{"1":"0.1333000","2":"0.13333333","3":"0.13330000","4":"0.4000000","5":"0.5714286","6":"0.40000000"},{"1":"0.2000000","2":"0.20000000","3":"0.20000000","4":"0.5333333","5":"1.0000000","6":"0.53333333"},{"1":"0.1333000","2":"0.33333333","3":"0.13330000","4":"0.4666667","5":"0.7142857","6":"0.46666667"},{"1":"0.3334000","2":"0.13333333","3":"0.33340000","4":"0.6000000","5":"0.5714286","6":"0.60000000"},{"1":"0.5333000","2":"0.20000000","3":"0.53330000","4":"0.4666667","5":"0.5714286","6":"0.46666667"},{"1":"0.2000000","2":"0.20000000","3":"0.20000000","4":"0.4666667","5":"1.0000000","6":"0.46666667"},{"1":"0.1333000","2":"0.20000000","3":"0.13330000","4":"0.5333333","5":"0.4285714","6":"0.53333333"},{"1":"0.2667000","2":"0.13333333","3":"0.26670000","4":"0.8000000","5":"0.4285714","6":"0.80000000"},{"1":"0.2667000","2":"0.06666667","3":"0.26670000","4":"0.6666667","5":"0.4285714","6":"0.66666667"},{"1":"0.0667000","2":"0.13333333","3":"0.06670000","4":"0.4666667","5":"0.5714286","6":"0.46666667"},{"1":"0.1333000","2":"0.20000000","3":"0.13330000","4":"0.4666667","5":"0.7142857","6":"0.46666667"},{"1":"0.2667000","2":"0.26666667","3":"0.26670000","4":"0.2666667","5":"0.5714286","6":"0.26666667"},{"1":"0.4666667","2":"0.26666667","3":"0.33333333","4":"0.2666667","5":"0.5710000","6":"0.26666667"},{"1":"0.4666667","2":"0.80000000","3":"0.13333333","4":"0.8000000","5":"0.5710000","6":"0.80000000"},{"1":"0.4666667","2":"0.86666667","3":"0.13333333","4":"0.8666667","5":"0.7140000","6":"0.86666667"},{"1":"0.4000000","2":"0.46666667","3":"0.13333333","4":"0.4666667","5":"0.2850000","6":"0.46666667"},{"1":"0.5333333","2":"0.40000000","3":"0.20000000","4":"0.4000000","5":"0.5140000","6":"0.40000000"},{"1":"0.4666667","2":"0.20000000","3":"0.33333333","4":"0.2000000","5":"0.7140000","6":"0.20000000"},{"1":"0.6000000","2":"0.40000000","3":"0.13333333","4":"0.4000000","5":"0.4280000","6":"0.40000000"},{"1":"0.4666667","2":"0.40000000","3":"0.20000000","4":"0.4000000","5":"0.5710000","6":"0.40000000"},{"1":"0.4666667","2":"0.53333333","3":"0.20000000","4":"0.5333333","5":"0.7140000","6":"0.53333333"},{"1":"0.5333333","2":"0.20000000","3":"0.20000000","4":"0.2000000","5":"0.5710000","6":"0.20000000"},{"1":"0.8000000","2":"0.33333333","3":"0.13333333","4":"0.3333333","5":"0.5700000","6":"0.33333333"},{"1":"0.6666667","2":"0.53333333","3":"0.06666667","4":"0.5333333","5":"0.2850000","6":"0.53333333"},{"1":"0.4666667","2":"0.66666667","3":"0.13333333","4":"0.6666667","5":"0.4280000","6":"0.66666667"},{"1":"0.4666667","2":"0.53333333","3":"0.20000000","4":"0.5333333","5":"0.4280000","6":"0.53333333"},{"1":"0.2666667","2":"0.33333333","3":"0.26666667","4":"0.3333333","5":"0.4280000","6":"0.33333333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1243,14 +1428,49 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 <p>We will use Box Plots and Density Plots to compare the STM score distributions for each Parameter. To do this we need to <code>pivot_longer</code> the adjacent columns ( e.g.&nbsp;<code>syllable_2</code> and syllable_5) and use these names as categorical variables:</p>
 <section id="syllable-parameter-sl" class="level4"><h4 class="anchored" data-anchor-id="syllable-parameter-sl">Syllable Parameter SL</h4>
 <div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">theme</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> Named list()
+ - attr(*, "class")= chr [1:2] "theme" "gg"
+ - attr(*, "complete")= logi FALSE
+ - attr(*, "validate")= logi TRUE</code></pre>
+</div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>stm_syllable <span class="ot">&lt;-</span> stm <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"syllable"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="at">data =</span> .,</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"syllable"</span>),</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="at">names_to =</span> <span class="st">"syllable"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="at">values_to =</span> <span class="st">"syl_scores"</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>  )</span>
+<span id="cb9-9"><a href="#cb9-9"></a>stm_syllable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["syllable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["syl_scores"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.57142857"},{"1":"syllable_2","2":"0.42857143"},{"1":"syllable_5","2":"0.57142857"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.71428571"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"1.00000000"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"1.00000000"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.85714286"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.57142857"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.71428571"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.85714286"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"1.00000000"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.85714286"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.71428571"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.57142857"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.57142857"},{"1":"syllable_2","2":"0.42857143"},{"1":"syllable_5","2":"0.57142857"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.57100000"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.57100000"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.71400000"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.28500000"},{"1":"syllable_2","2":"1.00000000"},{"1":"syllable_5","2":"0.51400000"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.71400000"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.42800000"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.57100000"},{"1":"syllable_2","2":"1.00000000"},{"1":"syllable_5","2":"0.71400000"},{"1":"syllable_2","2":"0.42857143"},{"1":"syllable_5","2":"0.57100000"},{"1":"syllable_2","2":"0.42857143"},{"1":"syllable_5","2":"0.57000000"},{"1":"syllable_2","2":"0.42857143"},{"1":"syllable_5","2":"0.28500000"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.42800000"},{"1":"syllable_2","2":"0.71428571"},{"1":"syllable_5","2":"0.42800000"},{"1":"syllable_2","2":"0.57142857"},{"1":"syllable_5","2":"0.42800000"},{"1":"syllable_2","2":"0.26670000"},{"1":"syllable_5","2":"0.33333333"},{"1":"syllable_2","2":"0.20000000"},{"1":"syllable_5","2":"0.13333333"},{"1":"syllable_2","2":"0.06670000"},{"1":"syllable_5","2":"0.13333333"},{"1":"syllable_2","2":"0.13330000"},{"1":"syllable_5","2":"0.13333333"},{"1":"syllable_2","2":"0.20000000"},{"1":"syllable_5","2":"0.20000000"},{"1":"syllable_2","2":"0.13330000"},{"1":"syllable_5","2":"0.33333333"},{"1":"syllable_2","2":"0.33340000"},{"1":"syllable_5","2":"0.13333333"},{"1":"syllable_2","2":"0.53330000"},{"1":"syllable_5","2":"0.20000000"},{"1":"syllable_2","2":"0.20000000"},{"1":"syllable_5","2":"0.20000000"},{"1":"syllable_2","2":"0.13330000"},{"1":"syllable_5","2":"0.20000000"},{"1":"syllable_2","2":"0.26670000"},{"1":"syllable_5","2":"0.13333333"},{"1":"syllable_2","2":"0.26670000"},{"1":"syllable_5","2":"0.06666667"},{"1":"syllable_2","2":"0.06670000"},{"1":"syllable_5","2":"0.13333333"},{"1":"syllable_2","2":"0.13330000"},{"1":"syllable_5","2":"0.20000000"},{"1":"syllable_2","2":"0.26670000"},{"1":"syllable_5","2":"0.26666667"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.26666667"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.80000000"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.86666667"},{"1":"syllable_2","2":"0.40000000"},{"1":"syllable_5","2":"0.46666667"},{"1":"syllable_2","2":"0.53333333"},{"1":"syllable_5","2":"0.40000000"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.20000000"},{"1":"syllable_2","2":"0.60000000"},{"1":"syllable_5","2":"0.40000000"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.40000000"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.53333333"},{"1":"syllable_2","2":"0.53333333"},{"1":"syllable_5","2":"0.20000000"},{"1":"syllable_2","2":"0.80000000"},{"1":"syllable_5","2":"0.33333333"},{"1":"syllable_2","2":"0.66666667"},{"1":"syllable_5","2":"0.53333333"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.66666667"},{"1":"syllable_2","2":"0.46666667"},{"1":"syllable_5","2":"0.53333333"},{"1":"syllable_2","2":"0.26666667"},{"1":"syllable_5","2":"0.33333333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>p1 <span class="ot">&lt;-</span> stm_syllable <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">ggplot</span>(.) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="fu">aes</span>(</span>
+<span id="cb10-5"><a href="#cb10-5"></a>      <span class="at">y =</span> syl_scores,</span>
+<span id="cb10-6"><a href="#cb10-6"></a>      <span class="at">x =</span> syllable,</span>
+<span id="cb10-7"><a href="#cb10-7"></a>      <span class="at">colour =</span> syllable,</span>
+<span id="cb10-8"><a href="#cb10-8"></a>      <span class="at">fill =</span> syllable</span>
+<span id="cb10-9"><a href="#cb10-9"></a>    ),</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"STM scores by Syllables in Test Word Lists"</span>)</span>
+<span id="cb10-13"><a href="#cb10-13"></a></span>
+<span id="cb10-14"><a href="#cb10-14"></a>p2 <span class="ot">&lt;-</span> stm_syllable <span class="sc">%&gt;%</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a>  <span class="fu">ggplot</span>(.) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> syl_scores, <span class="at">colour =</span> syllable, <span class="at">fill =</span> syllable), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"STM scores by Syllables in Test Word Lists"</span>)</span>
+<span id="cb10-18"><a href="#cb10-18"></a></span>
+<span id="cb10-19"><a href="#cb10-19"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(p1 <span class="sc">+</span> p2, <span class="at">guides =</span> <span class="st">"collect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/plots-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/plots-1-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
@@ -1259,14 +1479,48 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 </div>
 </section><section id="study-time-parameter-st" class="level4"><h4 class="anchored" data-anchor-id="study-time-parameter-st">Study Time Parameter ST</h4>
 <div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">theme</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> Named list()
+ - attr(*, "class")= chr [1:2] "theme" "gg"
+ - attr(*, "complete")= logi FALSE
+ - attr(*, "validate")= logi TRUE</code></pre>
+</div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>stm_studytime <span class="ot">&lt;-</span> stm <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"study"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb13-4"><a href="#cb13-4"></a>    <span class="at">data =</span> .,</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"study"</span>),</span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="at">names_to =</span> <span class="st">"study"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7"></a>    <span class="at">values_to =</span> <span class="st">"study_scores"</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>  )</span>
+<span id="cb13-9"><a href="#cb13-9"></a>stm_studytime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["study"],"name":[1],"type":["chr"],"align":["left"]},{"label":["study_scores"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.71428571"},{"1":"study_time_15","2":"0.42857143"},{"1":"study_time_30","2":"0.57142857"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.57142857"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.57142857"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"1.00000000"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.71428571"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.57142857"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.57142857"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"1.00000000"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.42857143"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.42857143"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.42857143"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.57142857"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.71428571"},{"1":"study_time_15","2":"0.42857143"},{"1":"study_time_30","2":"0.57142857"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.57100000"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.57100000"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.71400000"},{"1":"study_time_15","2":"1.00000000"},{"1":"study_time_30","2":"0.28500000"},{"1":"study_time_15","2":"1.00000000"},{"1":"study_time_30","2":"0.51400000"},{"1":"study_time_15","2":"0.85714286"},{"1":"study_time_30","2":"0.71400000"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.42800000"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.57100000"},{"1":"study_time_15","2":"0.85714286"},{"1":"study_time_30","2":"0.71400000"},{"1":"study_time_15","2":"1.00000000"},{"1":"study_time_30","2":"0.57100000"},{"1":"study_time_15","2":"0.85714286"},{"1":"study_time_30","2":"0.57000000"},{"1":"study_time_15","2":"0.71428571"},{"1":"study_time_30","2":"0.28500000"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.42800000"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.42800000"},{"1":"study_time_15","2":"0.57142857"},{"1":"study_time_30","2":"0.42800000"},{"1":"study_time_15","2":"0.26670000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.06670000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.13330000"},{"1":"study_time_30","2":"0.40000000"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.53333333"},{"1":"study_time_15","2":"0.13330000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.33340000"},{"1":"study_time_30","2":"0.60000000"},{"1":"study_time_15","2":"0.53330000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.13330000"},{"1":"study_time_30","2":"0.53333333"},{"1":"study_time_15","2":"0.26670000"},{"1":"study_time_30","2":"0.80000000"},{"1":"study_time_15","2":"0.26670000"},{"1":"study_time_30","2":"0.66666667"},{"1":"study_time_15","2":"0.06670000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.13330000"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.26670000"},{"1":"study_time_30","2":"0.26666667"},{"1":"study_time_15","2":"0.33333333"},{"1":"study_time_30","2":"0.26666667"},{"1":"study_time_15","2":"0.13333333"},{"1":"study_time_30","2":"0.80000000"},{"1":"study_time_15","2":"0.13333333"},{"1":"study_time_30","2":"0.86666667"},{"1":"study_time_15","2":"0.13333333"},{"1":"study_time_30","2":"0.46666667"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.40000000"},{"1":"study_time_15","2":"0.33333333"},{"1":"study_time_30","2":"0.20000000"},{"1":"study_time_15","2":"0.13333333"},{"1":"study_time_30","2":"0.40000000"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.40000000"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.53333333"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.20000000"},{"1":"study_time_15","2":"0.13333333"},{"1":"study_time_30","2":"0.33333333"},{"1":"study_time_15","2":"0.06666667"},{"1":"study_time_30","2":"0.53333333"},{"1":"study_time_15","2":"0.13333333"},{"1":"study_time_30","2":"0.66666667"},{"1":"study_time_15","2":"0.20000000"},{"1":"study_time_30","2":"0.53333333"},{"1":"study_time_15","2":"0.26666667"},{"1":"study_time_30","2":"0.33333333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>p1 <span class="ot">&lt;-</span> stm_studytime <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">ggplot</span>(.) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    <span class="fu">aes</span>(</span>
+<span id="cb14-5"><a href="#cb14-5"></a>      <span class="at">y =</span> study_scores,</span>
+<span id="cb14-6"><a href="#cb14-6"></a>      <span class="at">x =</span> study,</span>
+<span id="cb14-7"><a href="#cb14-7"></a>      <span class="at">colour =</span> study,</span>
+<span id="cb14-8"><a href="#cb14-8"></a>      <span class="at">fill =</span> study</span>
+<span id="cb14-9"><a href="#cb14-9"></a>    ),</span>
+<span id="cb14-10"><a href="#cb14-10"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>,</span>
+<span id="cb14-11"><a href="#cb14-11"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-12"><a href="#cb14-12"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"STM scores by Study Time in Test Word Lists"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13"></a>p2 <span class="ot">&lt;-</span> stm_studytime <span class="sc">%&gt;%</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>  <span class="fu">ggplot</span>(.) <span class="sc">+</span></span>
+<span id="cb14-15"><a href="#cb14-15"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> study_scores, <span class="at">colour =</span> study, <span class="at">fill =</span> study), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb14-16"><a href="#cb14-16"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"STM scores by Study Time in Test Word Lists"</span>)</span>
+<span id="cb14-17"><a href="#cb14-17"></a></span>
+<span id="cb14-18"><a href="#cb14-18"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(p1 <span class="sc">+</span> p2, <span class="at">guides =</span> <span class="st">"collect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/plots-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/plots-2-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
@@ -1275,14 +1529,39 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 </div>
 </section><section id="word-list-length-parameter-wl" class="level4"><h4 class="anchored" data-anchor-id="word-list-length-parameter-wl">Word List Length Parameter WL</h4>
 <div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">theme</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> Named list()
+ - attr(*, "class")= chr [1:2] "theme" "gg"
+ - attr(*, "complete")= logi FALSE
+ - attr(*, "validate")= logi TRUE</code></pre>
+</div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>stm_words <span class="ot">&lt;-</span> stm <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"list"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb17-4"><a href="#cb17-4"></a>    <span class="at">data =</span> ., <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"list"</span>),</span>
+<span id="cb17-5"><a href="#cb17-5"></a>    <span class="at">names_to =</span> <span class="st">"list"</span>, <span class="at">values_to =</span> <span class="st">"list_scores"</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  )</span>
+<span id="cb17-7"><a href="#cb17-7"></a>stm_words</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["list"],"name":[1],"type":["chr"],"align":["left"]},{"label":["list_scores"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.26670000"},{"1":"list_length_7","2":"0.42857143"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.06670000"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.13330000"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.13330000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.33340000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.53330000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.13330000"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.26670000"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.26670000"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.06670000"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.13330000"},{"1":"list_length_7","2":"0.42857143"},{"1":"list_length_15","2":"0.26670000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.33333333"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.13333333"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.13333333"},{"1":"list_length_7","2":"1.00000000"},{"1":"list_length_15","2":"0.13333333"},{"1":"list_length_7","2":"1.00000000"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.85714286"},{"1":"list_length_15","2":"0.33333333"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.13333333"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.85714286"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"1.00000000"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.85714286"},{"1":"list_length_15","2":"0.13333333"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.06666667"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.13333333"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.26666667"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.40000000"},{"1":"list_length_7","2":"1.00000000"},{"1":"list_length_15","2":"0.53333333"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.60000000"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"1.00000000"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.42857143"},{"1":"list_length_15","2":"0.53333333"},{"1":"list_length_7","2":"0.42857143"},{"1":"list_length_15","2":"0.80000000"},{"1":"list_length_7","2":"0.42857143"},{"1":"list_length_15","2":"0.66666667"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.71428571"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.57142857"},{"1":"list_length_15","2":"0.26666667"},{"1":"list_length_7","2":"0.57100000"},{"1":"list_length_15","2":"0.26666667"},{"1":"list_length_7","2":"0.57100000"},{"1":"list_length_15","2":"0.80000000"},{"1":"list_length_7","2":"0.71400000"},{"1":"list_length_15","2":"0.86666667"},{"1":"list_length_7","2":"0.28500000"},{"1":"list_length_15","2":"0.46666667"},{"1":"list_length_7","2":"0.51400000"},{"1":"list_length_15","2":"0.40000000"},{"1":"list_length_7","2":"0.71400000"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.42800000"},{"1":"list_length_15","2":"0.40000000"},{"1":"list_length_7","2":"0.57100000"},{"1":"list_length_15","2":"0.40000000"},{"1":"list_length_7","2":"0.71400000"},{"1":"list_length_15","2":"0.53333333"},{"1":"list_length_7","2":"0.57100000"},{"1":"list_length_15","2":"0.20000000"},{"1":"list_length_7","2":"0.57000000"},{"1":"list_length_15","2":"0.33333333"},{"1":"list_length_7","2":"0.28500000"},{"1":"list_length_15","2":"0.53333333"},{"1":"list_length_7","2":"0.42800000"},{"1":"list_length_15","2":"0.66666667"},{"1":"list_length_7","2":"0.42800000"},{"1":"list_length_15","2":"0.53333333"},{"1":"list_length_7","2":"0.42800000"},{"1":"list_length_15","2":"0.33333333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>p1 <span class="ot">&lt;-</span> stm_words <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">ggplot</span>(.) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> list_scores, <span class="at">x =</span> list, <span class="at">colour =</span> list, <span class="at">fill =</span> list), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"STM scores by Word Count in Test Word Lists"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a>p2 <span class="ot">&lt;-</span> stm_words <span class="sc">%&gt;%</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">ggplot</span>(.) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> list_scores, <span class="at">colour =</span> list, <span class="at">fill =</span> list), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"STM scores by Study Time in Test Word Lists"</span>)</span>
+<span id="cb18-10"><a href="#cb18-10"></a></span>
+<span id="cb18-11"><a href="#cb18-11"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(p1 <span class="sc">+</span> p2, <span class="at">guides =</span> <span class="st">"collect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/plots-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/plots-3-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
@@ -1296,42 +1575,48 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 <p>Hence we go for a Permutation Test to check for significance of effect.</p>
 <p>On the other hand, as remarked in Ernst<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, the non-parametric permutation test can be both <em>exact</em> and also <strong>intuitively easier</strong> for students to grasp, as I can testify from direct observation in this class. There is no need to discuss sampling distributions and means, t-tests and the like. Permutations are easily executed in R, using packages such as <code>mosaic</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">shapiro.test</span>(stm<span class="sc">$</span>syllable_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Shapiro-Wilk normality test
 
 data:  stm$syllable_2
 W = 0.95508, p-value = 0.02716</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">shapiro.test</span>(stm<span class="sc">$</span>syllable_5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Shapiro-Wilk normality test
 
 data:  stm$syllable_5
 W = 0.95321, p-value = 0.02211</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">shapiro.test</span>(stm<span class="sc">$</span>study_time_15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Shapiro-Wilk normality test
 
 data:  stm$study_time_15
 W = 0.9068, p-value = 0.0002348</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">shapiro.test</span>(stm<span class="sc">$</span>study_time_30)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Shapiro-Wilk normality test
 
 data:  stm$study_time_30
 W = 0.95539, p-value = 0.0281</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">shapiro.test</span>(stm<span class="sc">$</span>list_length_7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Shapiro-Wilk normality test
 
 data:  stm$list_length_7
 W = 0.90542, p-value = 0.0002085</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">shapiro.test</span>(stm<span class="sc">$</span>list_length_15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Shapiro-Wilk normality test
 
@@ -1342,51 +1627,105 @@ W = 0.92806, p-value = 0.001645</code></pre>
 </section><section id="permutation-tests" class="level2"><h2 class="anchored" data-anchor-id="permutation-tests">Permutation Tests</h2>
 <p>We proceed with a Permutation Test for each of the Parameters. We start with the Syllable Parameter SL. We shuffle the labels ( SL- = 2 and SL+ = 5) between the scores and determine the null distribution. This is then compared with the difference in <em>mean scores</em> between the unpermuted sets. We continue similarly for the other two parameters.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">theme</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> Named list()
+ - attr(*, "class")= chr [1:2] "theme" "gg"
+ - attr(*, "complete")= logi FALSE
+ - attr(*, "validate")= logi TRUE</code></pre>
+</div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Syllable Parameter SL</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a></span>
+<span id="cb33-3"><a href="#cb33-3"></a>obs_syl_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(stm<span class="sc">$</span>syllable_2) <span class="sc">-</span> <span class="fu">mean</span>(stm<span class="sc">$</span>syllable_5)</span>
+<span id="cb33-4"><a href="#cb33-4"></a>obs_syl_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>[1] 0.0153731</code></pre>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>null_dist_syllable <span class="ot">&lt;-</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">do</span>(<span class="dv">10000</span>) <span class="sc">*</span> <span class="fu">diff</span>(<span class="fu">mean</span>(</span>
+<span id="cb35-3"><a href="#cb35-3"></a>    stm_syllable<span class="sc">$</span>syl_scores <span class="sc">~</span> <span class="fu">shuffle</span>(stm_syllable<span class="sc">$</span>syllable),</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="at">data =</span> stm_syllable</span>
+<span id="cb35-5"><a href="#cb35-5"></a>  ))</span>
+<span id="cb35-6"><a href="#cb35-6"></a><span class="fu">head</span>(null_dist_syllable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["syllable_5"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.041561825","_rn_":"1"},{"1":"-0.032095952","_rn_":"2"},{"1":"-0.003795794","_rn_":"3"},{"1":"-0.087619603","_rn_":"4"},{"1":"0.014304206","_rn_":"5"},{"1":"0.018407381","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["syllable_5"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.04039310","_rn_":"1"},{"1":"0.09907452","_rn_":"2"},{"1":"0.03781500","_rn_":"3"},{"1":"-0.05430056","_rn_":"4"},{"1":"-0.04446437","_rn_":"5"},{"1":"-0.02100167","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>p1 <span class="ot">&lt;-</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  null_dist_syllable <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> syllable_5)) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> syllable_5 <span class="sc">&gt;=</span> obs_syl_mean)) <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Distribution of Diff in Means under null hypothesis for Syllables"</span>)</span>
+<span id="cb36-6"><a href="#cb36-6"></a></span>
+<span id="cb36-7"><a href="#cb36-7"></a></span>
+<span id="cb36-8"><a href="#cb36-8"></a><span class="co"># Study Time Parameter ST</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a>obs_study_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(stm<span class="sc">$</span>study_time_30) <span class="sc">-</span> <span class="fu">mean</span>(stm<span class="sc">$</span>study_time_15)</span>
+<span id="cb36-10"><a href="#cb36-10"></a>obs_study_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>[1] 0.08526183</code></pre>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>null_dist_studytime <span class="ot">&lt;-</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">do</span>(<span class="dv">10000</span>) <span class="sc">*</span> <span class="fu">diff</span>(<span class="fu">mean</span>(</span>
+<span id="cb38-3"><a href="#cb38-3"></a>    stm_studytime<span class="sc">$</span>study_scores <span class="sc">~</span> <span class="fu">shuffle</span>(stm_studytime<span class="sc">$</span>study),</span>
+<span id="cb38-4"><a href="#cb38-4"></a>    <span class="at">data =</span> stm_studytime</span>
+<span id="cb38-5"><a href="#cb38-5"></a>  ))</span>
+<span id="cb38-6"><a href="#cb38-6"></a><span class="fu">head</span>(null_dist_studytime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["study_time_30"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.0428565873","_rn_":"1"},{"1":"-0.0076745238","_rn_":"2"},{"1":"0.0850535714","_rn_":"3"},{"1":"0.0578189683","_rn_":"4"},{"1":"-0.0006486508","_rn_":"5"},{"1":"0.0621953175","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["study_time_30"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.03274325","_rn_":"1"},{"1":"0.03496992","_rn_":"2"},{"1":"-0.02887151","_rn_":"3"},{"1":"0.01563373","_rn_":"4"},{"1":"-0.02411944","_rn_":"5"},{"1":"-0.05172389","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>p2 <span class="ot">&lt;-</span> null_dist_studytime <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> study_time_30)) <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> study_time_30 <span class="sc">&gt;=</span> obs_study_mean)) <span class="sc">+</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Distribution of Diff in Means under null hypothesis for Study Time"</span>)</span>
+<span id="cb39-5"><a href="#cb39-5"></a></span>
+<span id="cb39-6"><a href="#cb39-6"></a><span class="co"># Word List Length Parameter WL</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>obs_word_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(stm<span class="sc">$</span>list_length_7) <span class="sc">-</span> <span class="fu">mean</span>(stm<span class="sc">$</span>list_length_15)</span>
+<span id="cb39-8"><a href="#cb39-8"></a>obs_word_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>[1] 0.2887539</code></pre>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>null_dist_words <span class="ot">&lt;-</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">do</span>(<span class="dv">10000</span>) <span class="sc">*</span> <span class="fu">diff</span>(<span class="fu">mean</span>(stm_words<span class="sc">$</span>list_scores <span class="sc">~</span> <span class="fu">shuffle</span>(stm_words<span class="sc">$</span>list), <span class="at">data =</span> stm_words))</span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="fu">head</span>(null_dist_words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["list_length_7"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.057792937","_rn_":"1"},{"1":"0.024118333","_rn_":"2"},{"1":"-0.022488968","_rn_":"3"},{"1":"0.053339762","_rn_":"4"},{"1":"0.001867222","_rn_":"5"},{"1":"0.024814841","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["list_length_7"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.01751183","_rn_":"1"},{"1":"0.02132532","_rn_":"2"},{"1":"-0.11463341","_rn_":"3"},{"1":"-0.01361833","_rn_":"4"},{"1":"-0.05688897","_rn_":"5"},{"1":"-0.06065929","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>p3 <span class="ot">&lt;-</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>  null_dist_words <span class="sc">%&gt;%</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> list_length_7)) <span class="sc">+</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> list_length_7 <span class="sc">&gt;=</span> obs_word_mean)) <span class="sc">+</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Distribution of Diff in Means under null hypothesis for Words"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># patchwork::wrap_plots(p1 + p2 + p3, nrow= 3, guides = "auto")</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>p1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/null-plots-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/null-plots-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb44" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/null-plots-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/null-plots-2.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb45" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>p3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/null-plots-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="index_files/figure-html/null-plots-3.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>

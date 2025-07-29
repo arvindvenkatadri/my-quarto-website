@@ -18,6 +18,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="../../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -37,10 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-c23b7709e79dce8e83170d48840a32ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-2b6495f7ddc21fa4b617d4bbc77b8bb8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../../site_libs/bootstrap/bootstrap-d5664ca1fdd2dd02efaccf936bd1c2a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../../site_libs/bootstrap/bootstrap-5f528a1a6148d113b6e028e8795138a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../../../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script src="../../../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -124,8 +159,6 @@ window.Quarto = {
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../../../../logos/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../../../../index.html">
     <span class="navbar-title">Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors</span>
     </a>
@@ -1211,7 +1244,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 17, 2025</p>
+      <p class="date-modified">July 29, 2025</p>
     </div>
   </div>
     
@@ -1242,10 +1275,11 @@ Subject\ to \\
 <ol type="1">
 <li>Set up an Excel sheet as shown in the picture below. We enter in the objective function and the constraints in tabular form as shown:</li>
 </ol>
-<div class="cell" data-layout-align="center">
+<div class="cell">
+<div class="sourceCode" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"images/Problem-Defn.png"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/Problem-Defn.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/Problem-Defn.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="308"></a></p>
+<div>
+<figure class="figure"><p><a href="images/Problem-Defn.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/Problem-Defn.png" class="img-fluid figure-img" width="308"></a></p>
 </figure>
 </div>
 </div>
@@ -1253,10 +1287,11 @@ Subject\ to \\
 <ol start="2" type="1">
 <li>Next we invoke the Solver Add-in: (Data -&gt; Solver):</li>
 </ol>
-<div class="cell" data-layout-align="center">
+<div class="cell">
+<div class="sourceCode" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"images/Solver-1.png"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/Solver-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/Solver-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="118"></a></p>
+<div>
+<figure class="figure"><p><a href="images/Solver-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/Solver-1.png" class="img-fluid figure-img" width="118"></a></p>
 </figure>
 </div>
 </div>
@@ -1264,10 +1299,11 @@ Subject\ to \\
 <ol start="3" type="1">
 <li>We set up the Solver for our problem as follows: Hit the SOLVE button.</li>
 </ol>
-<div class="cell" data-layout-align="center">
+<div class="cell">
+<div class="sourceCode" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"images/solver-setup-1.png"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/solver-setup-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/solver-setup-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="308"></a></p>
+<div>
+<figure class="figure"><p><a href="images/solver-setup-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/solver-setup-1.png" class="img-fluid figure-img" width="308"></a></p>
 </figure>
 </div>
 </div>
@@ -1275,10 +1311,11 @@ Subject\ to \\
 <ol start="4" type="1">
 <li>Choose to have all the three kinds of Reports from Solver (Answers, Sensitivity, and Limits).</li>
 </ol>
-<div class="cell" data-layout-align="center">
+<div class="cell">
+<div class="sourceCode" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"images/solver-setup-2.png"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/solver-setup-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/solver-setup-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="308"></a></p>
+<div>
+<figure class="figure"><p><a href="images/solver-setup-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/solver-setup-2.png" class="img-fluid figure-img" width="308"></a></p>
 </figure>
 </div>
 </div>

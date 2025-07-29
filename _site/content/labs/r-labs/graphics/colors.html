@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-c23b7709e79dce8e83170d48840a32ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-2b6495f7ddc21fa4b617d4bbc77b8bb8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-d5664ca1fdd2dd02efaccf936bd1c2a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-5f528a1a6148d113b6e028e8795138a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script src="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -117,13 +117,13 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 <script src="../../../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <meta property="og:title" content="Lab 05: Colors with Penguins – Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
 <meta property="og:description" content="Palettes from Famous Paintings, GoT, Harry Potter, and Wes Anderson">
-<meta property="og:image" content="https://av-quarto.netlify.app/content/labs/r-labs/graphics/03-figs/unnamed-chunk-2-1.png">
+<meta property="og:image" content="https://av-quarto.netlify.app/content/labs/r-labs/graphics/colors_files/figure-html/unnamed-chunk-2-1.png">
 <meta property="og:site_name" content="Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
 <meta property="og:image:height" content="3000">
 <meta property="og:image:width" content="4200">
 <meta name="twitter:title" content="Lab 05: Colors with Penguins – Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
 <meta name="twitter:description" content="Palettes from Famous Paintings, GoT, Harry Potter, and Wes Anderson">
-<meta name="twitter:image" content="https://av-quarto.netlify.app/content/labs/r-labs/graphics/03-figs/unnamed-chunk-2-1.png">
+<meta name="twitter:image" content="https://av-quarto.netlify.app/content/labs/r-labs/graphics/colors_files/figure-html/unnamed-chunk-2-1.png">
 <meta name="twitter:image-height" content="3000">
 <meta name="twitter:image-width" content="4200">
 <meta name="twitter:card" content="summary_large_image">
@@ -133,8 +133,6 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../../logos/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors</span>
     </a>
@@ -1249,7 +1247,7 @@ gtag('config', 'G-6SVG9ZJYCM', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 17, 2025</p>
+      <p class="date-modified">July 29, 2025</p>
     </div>
   </div>
     
@@ -1328,36 +1326,38 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <p>Fill and colour scales in ggplot2 can use the same palettes. Some shapes such as lines only accept the colour aesthetic, while others, such as polygons, accept both colour and fill aesthetics. In the latter case, the colour refers to the border of the shape, and the fill to the interior.</p>
 <div class="cell">
 <div class="sourceCode" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## A look at all 25 symbols</span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,</span>
-<span>                 y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">24</span>, by <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
-<span>                 z <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">25</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,</span>
+<span>  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">24</span>, by <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>  z <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">25</span></span>
+<span><span class="op">)</span></span>
 <span><span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">z</span>, y <span class="op">=</span> <span class="va">y</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">s</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">z</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_shape_identity</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="03-figs/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="colors_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>All symbols have a foreground colour, so if we add <code>color = "navy"</code>, they all are affected.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">s</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">z</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">4</span>, colour <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span>  <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_shape_identity</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">s</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">z</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">4</span>, colour <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_shape_identity</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="03-figs/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="colors_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>While all symbols have a foreground colour, symbols 21-25 also take a background colour (fill). So if we add <code>fill = "orchid"</code>, only the last row of symbols are affected.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">s</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">z</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">4</span>, colour <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"orchid"</span><span class="op">)</span>  <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_shape_identity</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">s</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">z</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">4</span>, colour <span class="op">=</span> <span class="st">"blue"</span>, fill <span class="op">=</span> <span class="st">"orchid"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_shape_identity</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="03-figs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="colors_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1396,41 +1396,47 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<div class="sourceCode" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="co"># pipe data into ggplot</span></span>
 <span>  <span class="co"># after removing data rows that have missing ( NA ) values</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">body_mass_g</span>, x <span class="op">=</span> <span class="va">flipper_length_mm</span>, </span>
-<span>           color <span class="op">=</span> <span class="va">species</span> <span class="co"># COLOUR = DISCRETE/QUAL VARIABLE</span></span>
-<span>           <span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>           <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>           <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Default Colours in ggplot"</span>, </span>
-<span>                subtitle <span class="op">=</span> <span class="st">"P1: DISCRETE/QUAL Colour Palette"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span></span>
+<span>    y <span class="op">=</span> <span class="va">body_mass_g</span>, x <span class="op">=</span> <span class="va">flipper_length_mm</span>,</span>
+<span>    color <span class="op">=</span> <span class="va">species</span> <span class="co"># COLOUR = DISCRETE/QUAL VARIABLE</span></span>
+<span>  <span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Default Colours in ggplot"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"P1: DISCRETE/QUAL Colour Palette"</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">p2</span> <span class="op">&lt;-</span> </span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="co"># pipe the data into ggplot, </span></span>
+<span><span class="va">p2</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="co"># pipe the data into ggplot,</span></span>
 <span>  <span class="co"># after removing data rows that have missing ( NA ) values</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">body_mass_g</span>, x <span class="op">=</span> <span class="va">flipper_length_mm</span>, </span>
-<span>           color <span class="op">=</span> <span class="va">bill_length_mm</span> <span class="co"># COLOUR = CONT/QUANT VARIABLE</span></span>
-<span>           <span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>           <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>           <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Default Colours in ggplot"</span>, </span>
-<span>                subtitle <span class="op">=</span> <span class="st">"P2: CONTINUOUS/QUANT Colour Palette"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span></span>
+<span>    y <span class="op">=</span> <span class="va">body_mass_g</span>, x <span class="op">=</span> <span class="va">flipper_length_mm</span>,</span>
+<span>    color <span class="op">=</span> <span class="va">bill_length_mm</span> <span class="co"># COLOUR = CONT/QUANT VARIABLE</span></span>
+<span>  <span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Default Colours in ggplot"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"P2: CONTINUOUS/QUANT Colour Palette"</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="va">p1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Penguins_default_simple_plots-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="03-figs/Penguins_default_simple_plots-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Penguins_default_simple_plots-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="colors_files/figure-html/Penguins_default_simple_plots-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
 <div class="sourceCode" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Penguins_default_simple_plots-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="03-figs/Penguins_default_simple_plots-2.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Penguins_default_simple_plots-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="colors_files/figure-html/Penguins_default_simple_plots-2.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1460,7 +1466,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="sourceCode" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/brewer_palettes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="03-figs/brewer_palettes-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/brewer_palettes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="colors_files/figure-html/brewer_palettes-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1472,16 +1478,16 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Brewer Palette = Blues"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Applying_RColorBrewer_Discrete_palettes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="03-figs/Applying_RColorBrewer_Discrete_palettes-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Applying_RColorBrewer_Discrete_palettes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="colors_files/figure-html/Applying_RColorBrewer_Discrete_palettes-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
 <div class="sourceCode" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Spectral"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Brewer Palette = Spectral"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Brewer Palette = Spectral"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Applying_RColorBrewer_Discrete_palettes-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="03-figs/Applying_RColorBrewer_Discrete_palettes-2.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Applying_RColorBrewer_Discrete_palettes-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="colors_files/figure-html/Applying_RColorBrewer_Discrete_palettes-2.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1502,28 +1508,30 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_colour_discrete</a></span><span class="op">(</span>type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/wesanderson/man/wes_palette.html">wes_palette</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"GrandBudapest1"</span>,</span>
-<span>                                           n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_colour_discrete</a></span><span class="op">(</span>type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/wesanderson/man/wes_palette.html">wes_palette</a></span><span class="op">(</span></span>
+<span>    name <span class="op">=</span> <span class="st">"GrandBudapest1"</span>,</span>
+<span>    n <span class="op">=</span> <span class="fl">3</span></span>
+<span>  <span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Wes Anderson Palette: GrandBudapest"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/wesanderson_discrete-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="03-figs/wesanderson_discrete-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/wesanderson_discrete-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="colors_files/figure-html/wesanderson_discrete-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
 <div class="sourceCode" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># We can also specify colour codes ourselves with scale_x_discrete.</span></span>
 <span><span class="co"># Use argument "values" instead of "type"</span></span>
-<span><span class="va">manual_colours</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#afc4b8"</span>, <span class="st">"#f1a4b2"</span>, <span class="st">"#ffb1e1"</span><span class="op">)</span> </span>
+<span><span class="va">manual_colours</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#afc4b8"</span>, <span class="st">"#f1a4b2"</span>, <span class="st">"#ffb1e1"</span><span class="op">)</span></span>
 <span><span class="va">manual_colours</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>[1] "#afc4b8" "#f1a4b2" "#ffb1e1"</code></pre>
 </div>
 <div class="sourceCode" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span>  <span class="va">manual_colours</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">manual_colours</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Manual Colours"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/wesanderson_discrete-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="03-figs/wesanderson_discrete-2.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/wesanderson_discrete-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="colors_files/figure-html/wesanderson_discrete-2.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1534,11 +1542,11 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="sourceCode" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># scale_x_brewer() for DISCRETE data</span></span>
 <span><span class="va">p1</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_colour_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Spectral"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  </span>
+<span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"RColorBrewer Palette = Spectral"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Brewer-discrete-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="03-figs/Brewer-discrete-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Brewer-discrete-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="colors_files/figure-html/Brewer-discrete-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1572,27 +1580,33 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 #4477AAFF #DDCC77FF #CC6677FF </code></pre>
 </div>
 <div class="sourceCode" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/paletteer/man/ggplot2-scales-discrete.html">scale_colour_paletteer_d</a></span><span class="op">(</span><span class="st">"ggthemes_ptol::qualitative"</span>, </span>
-<span>                           dynamic <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"ggThemes Palette: Qualitative"</span>, </span>
-<span>          subtitle <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/paletteer/man/ggplot2-scales-discrete.html">scale_colour_paletteer_d</a></span><span class="op">(</span><span class="st">"ggthemes_ptol::qualitative"</span>,</span>
+<span>    dynamic <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"ggThemes Palette: Qualitative"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">""</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/paletteer discrete-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="03-figs/paletteer discrete-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/paletteer discrete-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="colors_files/figure-html/paletteer discrete-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
 <div class="sourceCode" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># I like Vermeer's "Girl with the Pearl Earring"!</span></span>
 <span><span class="va">p1</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/paletteer/man/ggplot2-scales-discrete.html">scale_colour_paletteer_d</a></span><span class="op">(</span><span class="st">"dutchmasters::pearl_earring"</span>,</span>
-<span>                           dynamic <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Palettes from `paletteer`"</span>, </span>
-<span>          subtitle <span class="op">=</span> <span class="st">" Palette from Vermeer: Girl with Pearl Earring"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>    dynamic <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Palettes from `paletteer`"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">" Palette from Vermeer: Girl with Pearl Earring"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/paletteer discrete-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="03-figs/paletteer discrete-2.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/paletteer discrete-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="colors_files/figure-html/paletteer discrete-2.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1613,15 +1627,18 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <p>Creates a pallete containing <em>continuous</em> shades between two colours:</p>
 <div class="cell">
 <div class="sourceCode" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p2</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_color_gradient</a></span><span class="op">(</span></span>
-<span>      low <span class="op">=</span> <span class="st">"yellow"</span>, <span class="co"># Play with this in the chunk below</span></span>
-<span>      high <span class="op">=</span> <span class="st">"purple"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># Play with this in the chnk below</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Two Colour Gradients"</span>,</span>
-<span>          subtitle <span class="op">=</span> <span class="st">"P2: Continuous 2-Colour Pallete"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_color_gradient</a></span><span class="op">(</span></span>
+<span>    low <span class="op">=</span> <span class="st">"yellow"</span>, <span class="co"># Play with this in the chunk below</span></span>
+<span>    high <span class="op">=</span> <span class="st">"purple"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># Play with this in the chnk below</span></span>
+<span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Two Colour Gradients"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"P2: Continuous 2-Colour Pallete"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Continuous_Two_Colour_Gradients-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="03-figs/Continuous_Two_Colour_Gradients-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Continuous_Two_Colour_Gradients-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="colors_files/figure-html/Continuous_Two_Colour_Gradients-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1629,26 +1646,30 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </section><section id="continuous-three-colour-gradients" class="level2"><h2 class="anchored" data-anchor-id="continuous-three-colour-gradients">Continuous Three Colour Gradients</h2>
 <p>Sometimes we want a palette this way: a <em>midpoint</em> colour, and colours for the two extremes of a continuous variable:</p>
 <div class="cell">
-<div class="sourceCode" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">colour_midpoint</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">bill_length_mm</span>, </span>
-<span>                         na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># remove missing values</span></span>
+<div class="sourceCode" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">colour_midpoint</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">bill_length_mm</span>,</span>
+<span>  na.rm <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span> <span class="co"># remove missing values</span></span>
 <span><span class="co"># Struggled all morning on 22 Aug 2020 to get at this ;-D</span></span>
 <span></span>
 <span><span class="co"># Play with the function: 0/mean/median/mode/max/min</span></span>
 <span></span>
 <span><span class="va">p2</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_colour_gradient2</a></span><span class="op">(</span></span>
-<span>  low <span class="op">=</span> <span class="st">"brown"</span>, <span class="co"># Play with this in the chunk below</span></span>
-<span>  mid <span class="op">=</span> <span class="st">"white"</span>, <span class="co"># Play with this in the chunk below</span></span>
-<span>  high <span class="op">=</span> <span class="st">"purple"</span>, <span class="co"># Play with this in the chunk below</span></span>
-<span>  midpoint <span class="op">=</span> <span class="va">colour_midpoint</span>, <span class="co"># see above</span></span>
-<span>  space <span class="op">=</span> <span class="st">"Lab"</span>, <span class="co"># don't mess with this!</span></span>
-<span>  na.value <span class="op">=</span> <span class="st">"grey50"</span><span class="op">)</span>  <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Three colour continuous gradient"</span>, </span>
-<span>          subtitle <span class="op">=</span> <span class="st">"Mid Colour mapped to midpoint of data variable"</span>,</span>
-<span>          caption <span class="op">=</span> <span class="st">"Colours inspired by my favourite cocker spaniel, Lord Chestnut"</span><span class="op">)</span> <span class="co"># Play with these</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>    low <span class="op">=</span> <span class="st">"brown"</span>, <span class="co"># Play with this in the chunk below</span></span>
+<span>    mid <span class="op">=</span> <span class="st">"white"</span>, <span class="co"># Play with this in the chunk below</span></span>
+<span>    high <span class="op">=</span> <span class="st">"purple"</span>, <span class="co"># Play with this in the chunk below</span></span>
+<span>    midpoint <span class="op">=</span> <span class="va">colour_midpoint</span>, <span class="co"># see above</span></span>
+<span>    space <span class="op">=</span> <span class="st">"Lab"</span>, <span class="co"># don't mess with this!</span></span>
+<span>    na.value <span class="op">=</span> <span class="st">"grey50"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Three colour continuous gradient"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Mid Colour mapped to midpoint of data variable"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Colours inspired by my favourite cocker spaniel, Lord Chestnut"</span></span>
+<span>  <span class="op">)</span> <span class="co"># Play with these</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Continuous_Three_Colour_Gradients-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="03-figs/Continuous_Three_Colour_Gradients-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Continuous_Three_Colour_Gradients-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="colors_files/figure-html/Continuous_Three_Colour_Gradients-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1658,16 +1679,19 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="sourceCode" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># grDevices Palettes</span></span>
 <span><span class="va">p2</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_colour_gradientn</a></span><span class="op">(</span></span>
-<span>    colours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html">terrain.colors</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    colours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html">terrain.colors</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="co"># Try these:</span></span>
 <span>  <span class="co"># heat.colors() / topo.colors() / cm.colors() / rainbow()</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"N-colour continuous gradients"</span>, </span>
-<span>          subtitle <span class="op">=</span> <span class="st">"Palettes from grDevices"</span>,</span>
-<span>          caption <span class="op">=</span> <span class="st">"Palette: terrain.colors"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"N-colour continuous gradients"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Palettes from grDevices"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Palette: terrain.colors"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Continuous_n_Colour_Gradients_grDevices-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="03-figs/Continuous_n_Colour_Gradients_grDevices-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Continuous_n_Colour_Gradients_grDevices-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="colors_files/figure-html/Continuous_n_Colour_Gradients_grDevices-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1763,26 +1787,31 @@ $AsteroidCity3
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p2</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_colour_gradientn</a></span><span class="op">(</span></span>
-<span>      colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/wesanderson/man/wes_palette.html">wes_palette</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"GrandBudapest1"</span>, </span>
-<span>                           n <span class="op">=</span> <span class="fl">4</span><span class="op">)</span>, <span class="co"># Keep an eye on "n".</span></span>
-<span>      na.value <span class="op">=</span> <span class="st">"grey"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_colour_gradientn</a></span><span class="op">(</span></span>
+<span>    colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/wesanderson/man/wes_palette.html">wes_palette</a></span><span class="op">(</span></span>
+<span>      name <span class="op">=</span> <span class="st">"GrandBudapest1"</span>,</span>
+<span>      n <span class="op">=</span> <span class="fl">4</span></span>
+<span>    <span class="op">)</span>, <span class="co"># Keep an eye on "n".</span></span>
+<span>    na.value <span class="op">=</span> <span class="st">"grey"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="co"># Try these:</span></span>
 <span>  <span class="co"># "BottleRocket1"  "BottleRocket2"  "Rushmore1"</span></span>
 <span>  <span class="co"># "Rushmore"       "Royal1"         "Royal2"</span></span>
-<span>  <span class="co"># "Zissou1"        "Darjeeling1"    "Darjeeling2"   </span></span>
-<span>  <span class="co"># "Chevalier1"     "FantasticFox1"  "Moonrise1"     </span></span>
-<span>  <span class="co"># "Moonrise2"      "Moonrise3"      "Cavalcanti1"   </span></span>
-<span>  <span class="co"># "GrandBudapest1" "GrandBudapest2" "IsleofDogs1"   </span></span>
-<span>  <span class="co"># "IsleofDogs2"   </span></span>
+<span>  <span class="co"># "Zissou1"        "Darjeeling1"    "Darjeeling2"</span></span>
+<span>  <span class="co"># "Chevalier1"     "FantasticFox1"  "Moonrise1"</span></span>
+<span>  <span class="co"># "Moonrise2"      "Moonrise3"      "Cavalcanti1"</span></span>
+<span>  <span class="co"># "GrandBudapest1" "GrandBudapest2" "IsleofDogs1"</span></span>
+<span>  <span class="co"># "IsleofDogs2"</span></span>
 <span>  <span class="co"># Keep an eye on "n".</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"N-colour continuous gradients"</span>, </span>
-<span>       subtitle <span class="op">=</span> <span class="st">"Palettes from wesanderson"</span>,</span>
-<span>       caption <span class="op">=</span> <span class="st">"Palette: GrandBudapest1"</span><span class="op">)</span> <span class="co"># Change this caption based on palette choice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"N-colour continuous gradients"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Palettes from wesanderson"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Palette: GrandBudapest1"</span></span>
+<span>  <span class="op">)</span> <span class="co"># Change this caption based on palette choice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Using_wesanderson-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="03-figs/Using_wesanderson-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Using_wesanderson-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="colors_files/figure-html/Using_wesanderson-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1809,18 +1838,19 @@ $AsteroidCity3
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># scale_color_distiller() and scale_fill_distiller() </span></span>
-<span><span class="co"># are used to apply the ColorBrewer colour scales </span></span>
+<div class="sourceCode" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># scale_color_distiller() and scale_fill_distiller()</span></span>
+<span><span class="co"># are used to apply the ColorBrewer colour scales</span></span>
 <span><span class="co"># to continuous data.</span></span>
 <span></span>
 <span><span class="va">p2</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_colour_distiller</a></span><span class="op">(</span></span>
-<span>    palette <span class="op">=</span> <span class="st">"YlGnBu"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># Play with this palette</span></span>
-<span>  </span>
+<span>    palette <span class="op">=</span> <span class="st">"YlGnBu"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># Play with this palette</span></span>
+<span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"RColorBrewer Palette"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="03-figs/Using_Color_Brewer_palettes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="03-figs/Using_Color_Brewer_palettes-1.png" class="img-fluid figure-img" width="2100"></a></p>
+<figure class="figure"><p><a href="colors_files/figure-html/Using_Color_Brewer_palettes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="colors_files/figure-html/Using_Color_Brewer_palettes-1.png" class="img-fluid figure-img" width="2100"></a></p>
 </figure>
 </div>
 </div>
@@ -1843,21 +1873,25 @@ $AsteroidCity3
 <div class="sourceCode" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p2</span> <span class="op">+</span></span>
 <span>  <span class="co"># scale_colour_paletteer_c("gameofthrones::jon_snow") +</span></span>
 <span>  <span class="co"># Temporarily not available in paletteer?</span></span>
-<span>  </span>
+<span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/paletteer/man/ggplot2-scales-continuous.html">scale_colour_paletteer_c</a></span><span class="op">(</span><span class="va">`"harrypotter::dracomalfoy"`</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Using Paletteer"</span>,</span>
-<span>       subtitle <span class="op">=</span> <span class="st">"Continuous Palette-Hary Potter: Draco Malfoy"</span>,</span>
-<span>       caption <span class="op">=</span> <span class="st">"Oh you awful Srishti people..."</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Using Paletteer"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Continuous Palette-Hary Potter: Draco Malfoy"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Oh you awful Srishti people..."</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre data-code-line-numbers=""><code>Error in `gen_fun()`:
 ! The package "harrypotter" is required.</code></pre>
 </div>
-<div class="sourceCode" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span>  <span class="co"># Harry Potter Gryffindor Palette.</span></span>
-<span>  <span class="co"># Will ask for `harrypotter` package to be installed. Say yes!</span></span>
-<span>  <span class="va">p2</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Harry Potter Gryffindor Palette.</span></span>
+<span><span class="co"># Will ask for `harrypotter` package to be installed. Say yes!</span></span>
+<span><span class="va">p2</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/paletteer/man/ggplot2-scales-continuous.html">scale_colour_paletteer_c</a></span><span class="op">(</span><span class="st">"harrypotter::gryffindor"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Using Paletteer"</span>,</span>
-<span>       subtitle <span class="op">=</span> <span class="st">"Continuous Palette-Harry Potter: Gryffindor"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Using Paletteer"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Continuous Palette-Harry Potter: Gryffindor"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre data-code-line-numbers=""><code>Error in `gen_fun()`:
 ! The package "harrypotter" is required.</code></pre>

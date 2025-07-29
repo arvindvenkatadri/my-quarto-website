@@ -93,10 +93,10 @@ div.csl-indent {
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-c23b7709e79dce8e83170d48840a32ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-2b6495f7ddc21fa4b617d4bbc77b8bb8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../../site_libs/bootstrap/bootstrap-d5664ca1fdd2dd02efaccf936bd1c2a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../../site_libs/bootstrap/bootstrap-5f528a1a6148d113b6e028e8795138a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../../../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <link href="../../../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
@@ -1071,8 +1071,6 @@ globalThis.qwebrExecuteCode = async function (
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../../../../logos/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../../../../index.html">
     <span class="navbar-title">Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors</span>
     </a>
@@ -2402,7 +2400,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 17, 2025</p>
+      <p class="date-modified">July 29, 2025</p>
     </div>
   </div>
     
@@ -2533,16 +2531,24 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Set the theme</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="at">new =</span> <span class="fu">theme_custom</span>())</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Use available fonts in ggplot text geoms too!</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">update_geom_defaults</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">new =</span> <span class="fu">list</span>(</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">face =</span> <span class="st">"plain"</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="fl">3.5</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"#2b2b2b"</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-error">
+<pre data-code-line-numbers=""><code>Error in theme_set(new = theme_custom()): could not find function "theme_set"</code></pre>
+</div>
+<details class="code-fold"><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Use available fonts in ggplot text geoms too!</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">update_geom_defaults</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">new =</span> <span class="fu">list</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Roboto Condensed"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">face =</span> <span class="st">"plain"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="fl">3.5</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"#2b2b2b"</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-error">
+<pre data-code-line-numbers=""><code>Error in update_geom_defaults(geom = "text", new = list(family = "Roboto Condensed", : could not find function "update_geom_defaults"</code></pre>
+</div>
 </div>
 </section></section><section id="what-graphs-will-we-see-today" class="level2"><h2 class="anchored" data-anchor-id="what-graphs-will-we-see-today">
 <iconify-icon inline="" icon="fxemoji:japanesesymbolforbeginner" aria-label="Icon japanesesymbolforbeginner from fxemoji Iconify.design set." title="Icon japanesesymbolforbeginner from fxemoji Iconify.design set."></iconify-icon> What graphs will we see today?</h2>
@@ -2577,8 +2583,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
     <script>
 
-      function styleCell_bpbm3z7266cvlqo5ngdo(i, j, css_id) {
-          var table = document.getElementById("tinytable_bpbm3z7266cvlqo5ngdo");
+      function styleCell_8kt63p9ijji08e95r0uw(i, j, css_id) {
+          var table = document.getElementById("tinytable_8kt63p9ijji08e95r0uw");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -2588,7 +2594,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_bpbm3z7266cvlqo5ngdo');
+        var table = document.getElementById('tinytable_8kt63p9ijji08e95r0uw');
         // Find the row with data-row attribute matching i
         var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
         var newRow = table.insertRow(targetRow.rowIndex);
@@ -2600,8 +2606,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_bpbm3z7266cvlqo5ngdo(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_bpbm3z7266cvlqo5ngdo");
+      function spanCell_8kt63p9ijji08e95r0uw(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_8kt63p9ijji08e95r0uw");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -2632,24 +2638,24 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 0 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 5 },  ], css_id: 'tinytable_css_9m0e8ukggog692ndibmo',}, 
-          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 },  ], css_id: 'tinytable_css_g2gwi3njs0scauin9pzy',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 5 },  ], css_id: 'tinytable_css_69rxy33ppam65woesivm',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 },  ], css_id: 'tinytable_css_9i9nz28mz0by0x5297jb',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_bpbm3z7266cvlqo5ngdo(cell.i, cell.j, group.css_id);
+                  styleCell_8kt63p9ijji08e95r0uw(cell.i, cell.j, group.css_id);
               });
           });
       });
     </script><style>
       /* tinytable css entries after */
-      .table td.tinytable_css_9m0e8ukggog692ndibmo, .table th.tinytable_css_9m0e8ukggog692ndibmo { background-color: #ededed; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_g2gwi3njs0scauin9pzy, .table th.tinytable_css_g2gwi3njs0scauin9pzy { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_69rxy33ppam65woesivm, .table th.tinytable_css_69rxy33ppam65woesivm { background-color: #ededed; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_9i9nz28mz0by0x5297jb, .table th.tinytable_css_9i9nz28mz0by0x5297jb { border-bottom: solid #d3d8dc 0.1em; }
     </style>
 <div class="container">
-      <table class="table table-striped" id="tinytable_bpbm3z7266cvlqo5ngdo" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-striped" id="tinytable_8kt63p9ijji08e95r0uw" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
 <thead><tr>
 <th scope="col" data-row="0" data-col="0">No</th>
                 <th scope="col" data-row="0" data-col="1">Pronoun</th>
@@ -2714,7 +2720,7 @@ Figure&nbsp;1: Violin Plots for Normal Variables
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_violin.html">gf_violin</a></span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="st">"All Diamonds"</span>,</span>
+<div class="sourceCode" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_violin.html">gf_violin</a></span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="st">"All Diamonds"</span>,</span>
 <span>  data <span class="op">=</span> <span class="va">diamonds</span>,</span>
 <span>  draw_quantiles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">.25</span>, <span class="fl">.50</span>, <span class="fl">.75</span><span class="op">)</span></span>
 <span><span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
@@ -2734,7 +2740,7 @@ Figure&nbsp;1: Violin Plots for Normal Variables
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<div class="sourceCode" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_violin.html">gf_violin</a></span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">cut</span>,</span>
 <span>    draw_quantiles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">.25</span>, <span class="fl">.50</span>, <span class="fl">.75</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
@@ -2754,7 +2760,7 @@ Figure&nbsp;1: Violin Plots for Normal Variables
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<div class="sourceCode" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_violin.html">gf_violin</a></span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">cut</span>,</span>
 <span>    fill <span class="op">=</span> <span class="op">~</span><span class="va">cut</span>,</span>
 <span>    color <span class="op">=</span> <span class="op">~</span><span class="va">cut</span>,</span>
@@ -2777,7 +2783,7 @@ Figure&nbsp;1: Violin Plots for Normal Variables
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
+<div class="sourceCode" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggformula/man/gf_violin.html">gf_violin</a></span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">cut</span>,</span>
 <span>    fill <span class="op">=</span> <span class="op">~</span><span class="va">cut</span>,</span>
 <span>    colour <span class="op">=</span> <span class="op">~</span><span class="va">cut</span>,</span>
@@ -2801,7 +2807,7 @@ Figure&nbsp;1: Violin Plots for Normal Variables
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb8" data-code-line-numbers=""><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb11" data-code-line-numbers=""><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op"><a href="https://jbengler.github.io/tidyplots/reference/grapes-greater-than-grapes.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">price</span>, x <span class="op">=</span> <span class="st">""</span><span class="op">)</span>,</span>
 <span>    draw_quantiles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">.25</span>, <span class="fl">.50</span>, <span class="fl">.75</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># note: y, not x</span></span>

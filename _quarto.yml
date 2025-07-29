@@ -8,12 +8,7 @@ project:
   #   - theming/alegreya_roboto_theme.R
 
 page-layout: full
-# comments: 
-#     hypothesis:
-#       theme: clean
-#       openSidebar: false
-#       showHighlights: true
-#       enableExperimentalNewNoteButton: true
+
 execute:
   freeze: auto
   cache: true
@@ -48,9 +43,6 @@ website:
     #     file: index.qmd
       
     right:
-      # - text: Contents
-      # - blog.qmd
-      # - text: Content
       - icon: github
         href: https://github.com/arvindvenkatadri/my-quarto-website
       - icon: twitter
@@ -62,7 +54,7 @@ website:
 
   sidebar:
     style: "docked"
-    background: "cornsilk"
+    background: secondary
     alignment: left
     collapse-level: 2
     search: true
@@ -387,58 +379,23 @@ website:
     right:  Hosted by Netlify [{{< iconify simple-icons netlify >}}](https://www.netlify.com).
     left:  "License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)"
     background: light
-    #   - icon: github
-    #     href: https://github.com/arvindvenkatadri/
-    #   - icon: twitter
-    #     href: https://twitter.com/arvind_v
-    #   - icon: envelope
-    #     href: mailto:arvind.venkatadri@gmail.com
-      # - icon: rss
-      #   href: blog.xml
-      #   
+
 format:
   html:
     smooth-scroll: true
     fontsize: "medium"
-    theme:
-       light: 
-#         - flatly
-#         - css/flatly.scss
-          # - css/sofia-sans-extra-condensed.css
-          # - css/sofia-sans.css
-          # - css/sofia-sans-condensed.css
-          # - css/noto-serif.css
-          - css/fira.css
-          - css/roboto-condensed.css
-          - css/vollkorn.css
-          # - css/playfair-display.css
-          # - css/chubbo.css
-          # - css/alegreya.css
-          # - css/montserrat.css
-          - css/fraunces.css
-          - css/styles.css
-#         - css/code-annotate.scss
-#       dark: 
-#         - darkly
-#         - css/flatly.scss
-#         - css/sofia-sans-extra-condensed.css
-#         - css/sofia-sans.css
-#         - css/sofia-sans-condensed.css
-#         - css/noto-serif.css
-#         - css/fira.css
-#         - css/roboto.css
-#         - css/vollkorn.css
-##        - css/chubbo.css
-#         - css/styles.css
-#         - css/code-annotate.scss
-#   backgroundcolor: "#FCEFD3"
-    backgroundcolor: "cornsilk"
-    #author: Arvind V
+    theme: spacelab
+    css: 
+      - css/fira.css
+      - css/roboto-condensed.css
+      - css/vollkorn.css
+      - css/fraunces.css
+      - css/styles.css
+    backgroundcolor: ""
     mainfont: Roboto Condensed
     monofont: Fira Code
     link-external-icon: true
     link-external-newwindow: true
-    #link-external-filter: '^(?:http:|https:)\/\/www\.beamilz\.com\/**'
     citations-hover: true
     footnotes-hover: true
     page-navigation: true
@@ -462,9 +419,6 @@ format:
     toc: true
     fig-align: center
     fig-cap-location: bottom
-    # fig-asp: 0.618
-    # fig-width: 5
-    # fig-height: 4
     fig-dpi: 300
 
     filters:
@@ -475,12 +429,7 @@ format:
       - line-highlight
       - shinylive
       - gadenbuie/tachyons # Causes strange code wrapping with decimals!
-      
-    # - lightbox # based on extension
-    # - nutshell
-    # - lightboxfilters:
-    # - code-fullscreen
-    # - first-line-indent
+
     d2:
       format: svg
       embed_mode: raw

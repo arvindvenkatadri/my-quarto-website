@@ -10,6 +10,7 @@ forcats
 lubridate
 sf
 mapview
+leaflet
 leafem
 leafgl
 leafsync
@@ -20,7 +21,6 @@ osmdata
 dwapi
 data.world
 leafpop
-leaflet
 fontawesome
 terra
 maptiles
