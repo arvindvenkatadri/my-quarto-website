@@ -10,7 +10,7 @@ project:
 page-layout: full
 
 execute:
-  freeze: auto
+  freeze: true # freeze all code chunks by default
   cache: true
   echo: true
   warning: false
@@ -31,7 +31,13 @@ website:
   favicon: "content/materials/icon-park-twotone--concept-sharing.svg"
   google-analytics: "G-6SVG9ZJYCM" 
   reader-mode: true
-  
+  announcement: 
+     icon: info-circle
+     dismissable: false
+     content: "**Alert** - I have split up this Huge website into smaller ones. Please check out the new site URLs on the Home page for the latest course content. This website will not be updated anymore. Thanks for your patience and support! 🙏"
+     type: danger
+     position: below-navbar
+    
   navbar:
     background: primary
     # foreground: "#FAF1B0"

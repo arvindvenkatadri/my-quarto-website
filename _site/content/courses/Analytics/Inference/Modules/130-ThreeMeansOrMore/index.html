@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.11">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2023-03-28">
 <title>Comparing Multiple Means with ANOVA – Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors</title>
@@ -87,15 +87,14 @@ div.csl-indent {
 <link href="../../../../../../content/materials/icon-park-twotone--concept-sharing.svg" rel="icon" type="image/svg+xml">
 <script src="../../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-2b6495f7ddc21fa4b617d4bbc77b8bb8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-1b3e43c72e8be34557c75123b0b69e0d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../../site_libs/bootstrap/bootstrap-5f528a1a6148d113b6e028e8795138a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../../site_libs/bootstrap/bootstrap-e22a28b85bc1f4a768ed8f2816aca696.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script src="../../../../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <link href="../../../../../../site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
@@ -147,7 +146,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -161,7 +160,11 @@ const typesetMath = (el) => {
 window.Quarto = {
   typesetMath
 };
-</script>
+</script><link rel="stylesheet" href="css/fira.css">
+<link rel="stylesheet" href="../../../../../../css/roboto-condensed.css">
+<link rel="stylesheet" href="../../../../../../css/vollkorn.css">
+<link rel="stylesheet" href="css/fraunces.css">
+<link rel="stylesheet" href="../../../../../../css/styles.css">
 <meta property="og:title" content="Comparing Multiple Means with ANOVA – Applied Metaphors: Learning TRIZ, Complexity, Data/Stats/ML using Metaphors">
 <meta property="og:description" content="ANOVA to investigate how frogspawn hatching time varies with temperature.">
 <meta property="og:image" content="https://av-quarto.netlify.app/content/courses/Analytics/Inference/Modules/130-ThreeMeansOrMore/preview.jpg">
@@ -227,7 +230,12 @@ window.Quarto = {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </nav><div id="quarto-announcement" data-announcement-id="4b57bef335a567585c3a1479709382c2" class="alert alert-danger hidden">
+<i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Alert</strong> - I have split up this Huge website into smaller ones. Please check out the new site URLs on the Home page for the latest course content. This website will not be updated anymore. Thanks for your patience and support! 🙏</p>
+</div>
+</div>
+</header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../../../../../../index.html" class="sidebar-logo-link">
@@ -1422,7 +1430,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Research Question
+Research Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1432,7 +1440,7 @@ window.Quarto = {
 </section><section id="workflow-read-the-data" class="level2"><h2 class="anchored" data-anchor-id="workflow-read-the-data">
 <iconify-icon inline="" icon="flat-color-icons:workflow" aria-label="Icon workflow from flat-color-icons Iconify.design set." title="Icon workflow from flat-color-icons Iconify.design set."></iconify-icon> Workflow: Read the Data</h2>
 <p>Download the data by clicking the button below.</p>
-<p><a href="#dnldts4465" onclick="fetch('data:text/csv;base64,RnJvZ3NwYXduIHNhbXBsZSBpZCxUZW1wZXJhdHVyZTEzLFRlbXBlcmF0dXJlMTgsVGVtcGVyYXR1cmUyNQoxLDI0LCwKMiwsMjEsCjMsLCwxOAo0LDI2LCwKNSwsMjIsCjYsLCwxNAo3LDI3LCwKOCwsMjIsCjksLCwxNQoxMCwyNywsCjExLCwyMSwKMTIsLCwxNQoxMywyNiwsCjE0LCwyMCwKMTUsLCwxNgoxNiwyNywsCjE3LCwyMCwKMTgsLCwxNgoxOSwyNywsCjIwLCwxOSwKMjEsLCwxNwoyMiwyNSwsCjIzLCwyMSwKMjQsLCwxNwoyNSwyNiwsCjI2LCwyMywKMjcsLCwxNwoyOCwyOCwsCjI5LCwyMSwKMzAsLCwxNwozMSwyNCwsCjMyLCwyMSwKMzMsLCwxOAozNCwyNiwsCjM1LCwyMiwKMzYsLCwxNAozNywyNywsCjM4LCwyMiwKMzksLCwxNQo0MCwyNywsCjQxLCwyMSwKNDIsLCwxNQo0MywyNiwsCjQ0LCwyMCwKNDUsLCwxNgo0NiwyNywsCjQ3LCwyMCwKNDgsLCwxNgo0OSwyNywsCjUwLCwxOSwKNTEsLCwxNwo1MiwyNSwsCjUzLCwyMSwKNTQsLCwxNwo1NSwyNiwsCjU2LCwyMywKNTcsLCwxNwo1OCwyOCwsCjU5LCwyMSwKNjAsLCwxNwo=').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts46291" onclick="fetch('data:text/csv;base64,RnJvZ3NwYXduIHNhbXBsZSBpZCxUZW1wZXJhdHVyZTEzLFRlbXBlcmF0dXJlMTgsVGVtcGVyYXR1cmUyNQoxLDI0LCwKMiwsMjEsCjMsLCwxOAo0LDI2LCwKNSwsMjIsCjYsLCwxNAo3LDI3LCwKOCwsMjIsCjksLCwxNQoxMCwyNywsCjExLCwyMSwKMTIsLCwxNQoxMywyNiwsCjE0LCwyMCwKMTUsLCwxNgoxNiwyNywsCjE3LCwyMCwKMTgsLCwxNgoxOSwyNywsCjIwLCwxOSwKMjEsLCwxNwoyMiwyNSwsCjIzLCwyMSwKMjQsLCwxNwoyNSwyNiwsCjI2LCwyMywKMjcsLCwxNwoyOCwyOCwsCjI5LCwyMSwKMzAsLCwxNwozMSwyNCwsCjMyLCwyMSwKMzMsLCwxOAozNCwyNiwsCjM1LCwyMiwKMzYsLCwxNAozNywyNywsCjM4LCwyMiwKMzksLCwxNQo0MCwyNywsCjQxLCwyMSwKNDIsLCwxNQo0MywyNiwsCjQ0LCwyMCwKNDUsLCwxNgo0NiwyNywsCjQ3LCwyMCwKNDgsLCwxNgo0OSwyNywsCjUwLCwxOSwKNTEsLCwxNwo1MiwyNSwsCjUzLCwyMSwKNTQsLCwxNwo1NSwyNiwsCjU2LCwyMywKNTcsLCwxNwo1OCwyOCwsCjU5LCwyMSwKNjAsLCwxNwo=').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -1440,14 +1448,14 @@ window.Quarto = {
       a.download = 'frogs.csv'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-info downloadthis  " id="dnldts4465"><i class="bi bi-database-fill-down"></i> Download the frogs data </button></a></p>
+        });"><button class="btn btn-info downloadthis  " id="dnldts46291"><i class="bi bi-database-fill-down"></i> Download the frogs data </button></a></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Data Folder
+Data Folder
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1706,7 +1714,7 @@ SSA = SST - SSE
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Why “ANOVA”?
+Why “ANOVA”?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2126,7 +2134,7 @@ Fligner-Killeen:med chi-squared = 0.53898, df = 2, p-value = 0.7638</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Standard Errors
+Standard Errors
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2392,7 +2400,7 @@ $TempFac
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Two-Way ANOVA
+Two-Way ANOVA
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2406,7 +2414,7 @@ $TempFac
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Informative Hypothesis Testing: Models which incorporate a priori Beliefs
+Informative Hypothesis Testing: Models which incorporate a priori Beliefs
 </div>
 </div>
 <div class="callout-body-container callout-body">
