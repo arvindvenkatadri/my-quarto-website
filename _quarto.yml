@@ -10,7 +10,7 @@ project:
 page-layout: full
 
 execute:
-  freeze: true # freeze all code chunks by default
+  freeze: auto # freeze all code chunks by default
   cache: true
   echo: true
   warning: false
